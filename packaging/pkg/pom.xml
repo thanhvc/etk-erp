@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2003-2010 eXo Platform SAS.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Affero General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, see<http://www.gnu.org/licenses />.
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.etk.erp</groupId>
+    <artifactId>etk.erp.packaging</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.etk.erp</groupId>
+  <artifactId>etk.erp.packaging.pkg</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>etk ERP Packaging (packaging/pkg)</name>
+  <description>etk ERP Packaging (packaging/pkg)</description>
+
+  <properties>
+    <gatein.working.dir>${basedir}/target</gatein.working.dir>
+  </properties>
+
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.exoplatform.portal</groupId>
+      <artifactId>portal.packaging.module</artifactId>
+      <version>${org.exoplatform.portal.version}</version>
+      <type>js</type>
+    </dependency>
+    <dependency>
+      <groupId>org.etk.erp</groupId>
+      <artifactId>erp.packaging.module</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <type>js</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.etk.erp</groupId>
+      <artifactId>erp.packaging.product</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <type>js</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.etk.tool</groupId>
+      <artifactId>etkpackage</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+  <dependency>
+      <groupId>org.exoplatform.portal</groupId>
+      <artifactId>exo.portal.web.portal</artifactId>
+      <version>${org.exoplatform.portal.version}</version>
+      <type>war</type>
+   </dependency>
+   <dependency>
+      <groupId>org.etk.erp</groupId>
+      <artifactId>erp.server.tomcat.patch</artifactId>
+      <version>${project.version}</version>
+      <type>jar</type>
+   </dependency>
+   <dependency>
+      <groupId>org.etk.sample</groupId>
+      <artifactId>etk.sample</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <type>war</type>
+   </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- check-out exobuild -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <repositoryUrl>http://repository.exoplatform.org/content/groups/all/</repositoryUrl>
+        </configuration>
+        <executions>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.etk.tool</groupId>
+                  <artifactId>etkpackage</artifactId>
+                  <type>zip</type>
+                  <outputDirectory>target/etkpackage</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeTypes>js</includeTypes>
+              <stripVersion>true</stripVersion>
+              <!--includeArtifactIds>exo.packaging.*.module</includeArtifactIds-->
+              <outputDirectory>${project.build.directory}/etkpackage-conf</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>pkg-tomcat</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <finalName>etk-erp-${project.version}</finalName>
+        <plugins>
+          <!-- Ensure your environment is correctly setup -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>tomcat-check-environment-ready</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireProperty>
+                      <property>exo.projects.directory.dependencies</property>
+                      <message>"You must define the property exo.projects.directory.dependencies to give the path to the directory where you store your applications servers"</message>
+                    </requireProperty>
+                    <requireProperty>
+                      <property>exo.projects.app.tomcat.version</property>
+                      <message>"You must define the property exo.projects.app.tomcat.version to give the name of the directory where is stored tomcat"</message>
+                    </requireProperty>
+                    <requireFilesExist>
+                      <files>
+                        <file>${exo.projects.directory.dependencies}/${exo.projects.app.tomcat.version}/</file>
+                      </files>
+                      <message>"The following Tomcat directory doesn't exist : ${exo.projects.directory.dependencies}/${exo.projects.app.tomcat.version}"</message>
+                    </requireFilesExist>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- run exo build -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>tomcat-exopackage</id>
+                <phase>package</phase>
+                <configuration>
+                  <executable>java</executable>
+                  <workingDirectory>${basedir}</workingDirectory>
+                  <arguments>
+                    <argument>-Dexo.package.home=${basedir}/target/etkpackage</argument>
+                    <argument>-Dexo.current.dir=${basedir}</argument>
+                    <argument>-Dexo.base.dir=${exo.projects.directory.base}</argument>
+                    <argument>-Dexo.conf.dir=${basedir}/target/etkpackage-conf</argument>
+                    <argument>-Dexo.working.dir=${gatein.working.dir}</argument>
+                    <!--argument>-Dexo.src.dir=NONE</argument-->
+                    <argument>-Dexo.dep.dir=${exo.projects.directory.dependencies}</argument>
+                    <!-- to get the server ref install -->
+                    <argument>-Dexo.m2.repos=file:${settings.localRepository},http://repository.exoplatform.org/all</argument>
+                    <argument>-Dclean.server=${exo.projects.app.tomcat.version}</argument>
+                    <argument>-Dexo.m2.home=${maven.home}</argument>
+                    <argument>-Xshare:auto</argument>
+                    <argument>-Xms64m</argument>
+                    <argument>-Xmx1024m</argument>
+                    <argument>-XX:MaxPermSize=512m</argument>
+                    <argument>-classpath</argument>
+                    <argument>${basedir}/target/etkpackage/lib/js.jar</argument>
+                    <argument>org.mozilla.javascript.tools.shell.Main</argument>
+                    <argument>${basedir}/target/etkpackage/javascript/eXo/eXo.js</argument>
+                    <argument>exobuild</argument>
+                    <argument>--product=erp</argument>
+                    <argument>--deploy=tomcat</argument>
+                  </arguments>
+                </configuration>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>arc-tomcat</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>tomcat-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>src/main/assembly/tomcat-zip.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+  </profiles>
+</project>

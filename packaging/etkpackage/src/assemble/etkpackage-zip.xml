@@ -1,0 +1,33 @@
+<assembly>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+	 <fileSet>
+	  <directory>src/main</directory>
+	  <outputDirectory></outputDirectory>
+	  <includes><include>**</include></includes>
+	  <excludes>
+	  	<exclude>**/*.sh</exclude>
+	  	<exclude>conf/**</exclude>
+	  </excludes>
+	 </fileSet>
+	 <fileSet>
+	  <directory>src/main</directory>
+	  <outputDirectory></outputDirectory>
+	  <includes><include>**/*.sh</include></includes>
+	  <fileMode>0755</fileMode>
+	 </fileSet>
+	 <fileSet>
+	  <directory>src/main</directory>
+	  <outputDirectory></outputDirectory>
+	  <includes>
+	  	<include>conf/modules/.svn/**</include>
+	  	<include>conf/products/.svn/**</include>
+	  	<!--include>conf/products/.svn/**/*.*</include-->
+	  </includes>
+	  <fileMode>0755</fileMode>
+	 </fileSet>
+	</fileSets>
+</assembly>
