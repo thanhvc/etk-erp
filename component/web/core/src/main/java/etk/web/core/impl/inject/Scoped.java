@@ -14,23 +14,28 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.request;
+package etk.web.core.impl.inject;
 
 /**
+ * Wrap a scope value.
+ * 
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
- * Mar 21, 2012  
+ * Mar 22, 2012  
  */
-public interface HttpContext {
+public interface Scoped
+{
 
-  javax.servlet.http.Cookie[] getCookies();
-  
-  String getScheme();
-  
-  int getServerPort();
-  
-  String getServerName();
-  
-  String getContextPath();
+   /**
+    * Returns the scoped value.
+    *
+    * @return the value
+    */
+   Object get();
+
+   /**
+    * Signals the scoped value is destroyed.
+    */
+   void destroy();
 }

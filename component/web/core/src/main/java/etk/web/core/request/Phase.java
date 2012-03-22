@@ -16,6 +16,12 @@
  */
 package etk.web.core.request;
 
+import java.lang.annotation.Annotation;
+
+import etk.web.core.Action;
+import etk.web.core.Resource;
+import etk.web.core.View;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
@@ -24,4 +30,49 @@ package etk.web.core.request;
  */
 public enum Phase {
 
+  /**
+   * Action phase.
+   */
+  ACTION(Action.class)
+  {
+     @Override
+     public String id(Annotation annotation) throws ClassCastException
+     {
+        return ((Action)annotation).id();
+     }
+  },
+
+  /**
+   * Render phase.
+   */
+  RENDER(View.class)
+  {
+     @Override
+     public String id(Annotation annotation) throws ClassCastException
+     {
+        return ((View)annotation).id();
+     }
+  },
+
+  /**
+   * Resource phase.
+   */
+  RESOURCE(Resource.class)
+  {
+     @Override
+     public String id(Annotation annotation) throws ClassCastException
+     {
+        return ((Resource)annotation).id();
+     }
+  };
+
+  /** . */
+  public final Class<? extends Annotation> annotation;
+
+  Phase(Class<? extends Annotation> annotation)
+  {
+     this.annotation = annotation;
+  }
+
+  public abstract String id(Annotation annotation) throws ClassCastException;
 }

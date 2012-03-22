@@ -14,23 +14,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.request;
+package etk.web.core;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
- * Mar 21, 2012  
+ * Mar 22, 2012  
  */
-public interface HttpContext {
-
-  javax.servlet.http.Cookie[] getCookies();
-  
-  String getScheme();
-  
-  int getServerPort();
-  
-  String getServerName();
-  
-  String getContextPath();
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface View
+{
+   String id() default "";
 }
