@@ -25,6 +25,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import etk.web.core.impl.spi.request.servlet.ServletActionEvent;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
@@ -47,7 +49,7 @@ public final class EtkServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
                                                                         IOException {
-    processAction();
+    processAction(req, resp);
     serveResource();
     render();
     resp.setContentType("text/html");
@@ -62,7 +64,7 @@ public final class EtkServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    processAction();
+    processAction(req, resp);
     serveResource();
     render();
     resp.setContentType("text/html");
@@ -74,13 +76,12 @@ public final class EtkServlet extends HttpServlet {
     out.close();
   }
   
-  private void processAction() throws ServletException, IOException {
-    
+  private void processAction(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletActionEvent action = new ServletActionEvent(req, resp);
   }
   
   private void render() {
     try {
-      
       serveResource();
     } catch (Exception ex) {
       renderException(ex);

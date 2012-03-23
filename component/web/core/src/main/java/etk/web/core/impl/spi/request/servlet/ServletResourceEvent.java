@@ -16,12 +16,52 @@
  */
 package etk.web.core.impl.spi.request.servlet;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import etk.web.core.impl.spi.request.ResourceEvent;
+import etk.web.core.request.Response;
+import etk.web.core.text.WriterPrinter;
+
 /**
+ * 
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 22, 2012  
  */
-public class ServletResourceEvent {
-
+public class ServletResourceEvent extends ServletMimeEvent implements ResourceEvent {
+  
+  ServletResourceEvent(HttpServletRequest req, HttpServletResponse resp) {
+    super(req, resp);
+  }
+  
+  public void setResponse(Response response) throws IllegalStateException, IOException {
+    
+    //
+    if (response instanceof Response.Content.Resource) {
+      Response.Content.Resource resource = (Response.Content.Resource)response;
+      
+      //check the status which return current interaction.
+      //if 200 status return, it's OK and resource is available for render.
+      int status = resource.getStatus();
+      
+      if(status != 200) {
+        resp.setStatus(status);
+      }
+      
+    }
+    
+    //
+    resp.setContentType("text/html");
+    
+    //
+    PrintWriter writer = resp.getWriter();
+    
+    //Send response
+    ((Response.Resource) response).send(new WriterPrinter(writer));
+  }
 }

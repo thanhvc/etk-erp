@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import etk.web.core.impl.spi.request.ActionEvent;
+import etk.web.core.request.Phase;
 import etk.web.core.request.Response;
 
 /**
@@ -34,8 +35,8 @@ import etk.web.core.request.Response;
  */
 public class ServletActionEvent extends ServletRequestEvent implements ActionEvent {
   
-  public ServletActionEvent(HttpServletRequest req, HttpServletResponse resp, Map<String, String[]> parameters) {
-    super(req, resp, parameters);
+  public ServletActionEvent(HttpServletRequest req, HttpServletResponse resp) {
+    super(req, resp);
   }
 
   public void setResponse(Response response) throws IllegalStateException, IOException {

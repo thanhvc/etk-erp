@@ -14,22 +14,25 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.impl.spi.request.servlet;
+package etk.web.core.text;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import etk.web.core.impl.spi.request.MimeEvent;
+import java.io.IOException;
 
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
- * Mar 22, 2012  
+ * Mar 23, 2012  
  */
-public abstract class ServletMimeEvent extends ServletRequestEvent implements MimeEvent {
+public interface Printer
+{
 
-  ServletMimeEvent(HttpServletRequest req, HttpServletResponse resp) {
-    super(req, resp);
-  }
+   void write(char c) throws IOException;
+
+   void write(String s) throws IOException;
+
+   void write(CharSequence s) throws IOException;
+
+   void write(CharArray chars) throws IOException;
+
 }

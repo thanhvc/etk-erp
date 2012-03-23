@@ -51,27 +51,23 @@ public abstract class ServletRequestEvent implements RequestEvent, HttpContext {
   public static ServletRequestEvent create(HttpServletRequest req, HttpServletResponse resp) {
     //default is always RENDER phase.
     Phase phase = Phase.RENDER;
-    Map<String, String[]> parameters = new HashMap<String, String[]>();
     
     for(Map.Entry<String, String[]> entry : ((Map<String, String[]>)req.getParameterMap()).entrySet()) {
-      
       String name = entry.getKey();
       String[] value = entry.getValue();
-      if (name.equals("juzu.phase")) {
+      if (name.equals("etk.phase")) {
         phase = Phase.valueOf(value[0]);
-      } else {
-        parameters.put(name, value);
-      }
+        break;
+      } 
     }
     
     switch (phase) {
-
       case RENDER:
-        return new ServletRenderEvent(req, resp, parameters);
+        return new ServletRenderEvent(req, resp);
       case ACTION:
-        return new ServletActionEvent(req, resp, parameters);
+        return new ServletActionEvent(req, resp);
       case RESOURCE:
-        return new ServletResourceEvent(req, resp, parameters);
+        return new ServletResourceEvent(req, resp);
       default:
         throw new UnsupportedOperationException("todo");
 
@@ -86,10 +82,19 @@ public abstract class ServletRequestEvent implements RequestEvent, HttpContext {
   final Map<String, String[]> parameters;
   
   ServletRequestEvent(HttpServletRequest req,
-                      HttpServletResponse resp,
-                      Map<String, String[]> parameters) {
+                      HttpServletResponse resp) {
     this.req = req;
     this.resp = resp;
+    //need to parser the parameters from HttpServletRequest
+    Map<String, String[]> parameters = req.getParameterMap();
+    
+    String methodId= req.getParameter("op");
+    if (methodId != null)
+    {
+       parameters = new HashMap<String, String[]>(parameters);
+       parameters.remove("op");
+    }
+
     this.parameters = parameters;
   }
   
@@ -109,6 +114,10 @@ public abstract class ServletRequestEvent implements RequestEvent, HttpContext {
     return req.getServerName();
   }
   
+  public String getContextPath() {
+    return req.getContextPath();
+  }
+  
   public final String getNamespace() {
     return "window_ns";
   }
@@ -123,6 +132,13 @@ public abstract class ServletRequestEvent implements RequestEvent, HttpContext {
 
   public final HttpContext getHttpContext() {
     return this;
+  }
+  
+  public final Scoped getIdentityValue(Object key) {
+    return null;
+  }
+
+  public final void setIdentityValue(Object key, Scoped value) {
   }
   
   @Override
@@ -141,6 +157,24 @@ public abstract class ServletRequestEvent implements RequestEvent, HttpContext {
    } else {
      getRequestContext(true).set(key, value);
    }
+  }
+  
+  @Override
+  public final void setSessionValue(Object key, Scoped value) {
+    if (value == null) {
+      ScopedContext context = getSessionContext(false);
+      if (context != null) {
+        context.set(key, null);
+      }
+    } else {
+      getSessionContext(true).set(key, value);
+    }
+  }
+  
+  @Override
+  public final Scoped getSessionValue(Object key) {
+    ScopedContext context = getSessionContext(false);
+    return context != null ? context.get(key) : null;
   }
   
   /**

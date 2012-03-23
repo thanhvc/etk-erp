@@ -16,7 +16,11 @@
  */
 package etk.web.core.request;
 
+import java.io.IOException;
 import java.util.Map;
+
+import etk.web.core.text.Printer;
+
 
 /**
  * Created by The eXo Platform SAS
@@ -92,7 +96,7 @@ public abstract class Response {
     
     @Override
     public String toString() {
-      return "Response.Update[parameters " + parameters + ""]";
+      return "Response.Update[parameters " + parameters + "]";
     }
   }
   
@@ -132,15 +136,25 @@ public abstract class Response {
   }
   
   public static abstract class Content extends Response {
-    
+    public abstract void send(Printer printer) throws IOException;
   }
   
   public static abstract class Render extends Content {
     
   }
   
+  /**
+   * Resource response wrapper
+   * @author thanh_vucong
+   *
+   */
   public static abstract class Resource extends Content {
+    public abstract int getStatus();
     
+    @Override
+    public String toString() {
+      return "Response.Resource[]";
+    }
   }
   
   public static Response.Redirect redirect(String location) {

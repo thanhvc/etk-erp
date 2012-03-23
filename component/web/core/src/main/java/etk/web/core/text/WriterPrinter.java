@@ -14,35 +14,41 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.impl.spi.request.servlet;
+package etk.web.core.text;
 
 import java.io.IOException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import etk.web.core.impl.spi.request.RenderEvent;
-import etk.web.core.request.Response;
-
 /**
- * Created by The eXo Platform SAS
- * Author : eXoPlatform
- *          exo@exoplatform.com
- * Mar 22, 2012  
+ * Created by The eXo Platform SAS Author : eXoPlatform exo@exoplatform.com Mar
+ * 23, 2012
  */
-public class ServletRenderEvent extends ServletMimeEvent implements RenderEvent {
-  public ServletRenderEvent(HttpServletRequest req, HttpServletResponse resp) {
-    
-    super(req, resp);
-  }
-  
-  @Override
-  public void setTitle(String title) {
+public class WriterPrinter implements Printer {
+
+  /** . */
+  protected final Appendable writer;
+
+  public WriterPrinter(Appendable writer) {
+    if (writer == null) {
+      throw new NullPointerException("No null writer accepted");
+    }
+
+    //
+    this.writer = writer;
   }
 
-
-  @Override
-  public void setResponse(Response response) throws IllegalStateException, IOException {
+  public void write(char c) throws IOException {
+    writer.append(c);
   }
 
+  public void write(CharSequence s) throws IOException {
+    writer.append(s);
+  }
+
+  public void write(String s) throws IOException {
+    writer.append(s);
+  }
+
+  public void write(CharArray chars) throws IOException {
+    chars.write(writer);
+  }
 }
