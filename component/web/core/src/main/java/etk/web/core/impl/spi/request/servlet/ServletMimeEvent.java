@@ -16,12 +16,22 @@
  */
 package etk.web.core.impl.spi.request.servlet;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import etk.web.core.impl.spi.request.MimeEvent;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 22, 2012  
  */
-public class ServletMimeEvent {
+public abstract class ServletMimeEvent extends ServletRequestEvent implements MimeEvent {
 
+  ServletMimeEvent(HttpServletRequest req, HttpServletResponse resp, Map<String, String[]> parameters) {
+    super(req, resp, parameters);
+  }
 }

@@ -16,6 +16,8 @@
  */
 package etk.web.core.request;
 
+import java.util.Map;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
@@ -24,10 +26,81 @@ package etk.web.core.request;
  */
 public abstract class Response {
 
+  /**
+   * A response instructing to execute a render phase of a controller 
+   * method after the current interaction.
+   * 
+   * @author thanh_vucong
+   *
+   */
   public static class Update extends Response {
+    final Map<String, String> parameters;
     
+    public Update(Map<String, String> parameters) {
+      this.parameters = parameters;
+    }
+    
+    /**
+     * Setter the parameter name and value for Response.Update
+     * these parameter will bind with the controller method.
+     * 
+     * @param parameterName parameter name
+     * @param parameterValue parameter value
+     * @return this object
+     */
+    public Update setParameter(String parameterName, String parameterValue) {
+      if (parameterName == null) {
+        throw new NullPointerException();
+      }
+      
+      //
+      if (parameterValue == null) {
+        throw new NullPointerException();
+      }
+      
+      //
+      if (parameterName.startsWith("erp.")) {
+        throw new IllegalArgumentException("Parameter can not start with <erp.> prefix.");
+      }
+      
+      //
+      parameters.put(parameterName, parameterValue);
+      return this;
+    }
+    
+    /**
+     * Getter the parameter list
+     * @return
+     */
+    public Map<String, String> getParameters() {
+      return parameters;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      
+      if (obj instanceof Update) {
+        Update that = (Update) obj;
+        return parameters.equals(that.parameters);
+      }
+      
+      return false;
+    }
+    
+    @Override
+    public String toString() {
+      return "Response.Update[parameters " + parameters + ""]";
+    }
   }
   
+  /**
+   * A response instructing to execute an HTTP redirect after the current interaction
+   * @author thanh_vucong
+   *
+   */
   public static class Redirect extends Response {
     
     private final String location;

@@ -16,12 +16,47 @@
  */
 package etk.web.core.impl.spi.request.servlet;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import etk.web.core.impl.spi.request.ActionEvent;
+import etk.web.core.request.Response;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 22, 2012  
  */
-public class ServletActionEvent {
+public class ServletActionEvent extends ServletRequestEvent implements ActionEvent {
+  
+  public ServletActionEvent(HttpServletRequest req, HttpServletResponse resp, Map<String, String[]> parameters) {
+    super(req, resp, parameters);
+  }
+
+  public void setResponse(Response response) throws IllegalStateException, IOException {
+    if (response instanceof Response.Update) {
+      Response.Update update = (Response.Update) response;
+      Map<String, String[]> parameters = new HashMap<String, String[]>();
+      
+      for (Map.Entry<String, String> entry : update.getParameters().entrySet()) {
+        parameters.put(entry.getKey(), new String[]{entry.getValue()});
+      }
+      
+      String url = renderURL(Phase.RENDER, null, parameters);
+      resp.sendRedirect(url);
+      
+    } else if (response instanceof Response.Redirect) {
+      Response.Redirect redirect = (Response.Redirect) response;
+      String url = redirect.getLocation();
+      resp.sendRedirect(url);
+    }
+  }
+  
+  
 
 }

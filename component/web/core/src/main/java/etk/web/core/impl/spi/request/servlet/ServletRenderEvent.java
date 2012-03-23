@@ -16,12 +16,89 @@
  */
 package etk.web.core.impl.spi.request.servlet;
 
+import java.io.IOException;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import etk.web.core.impl.inject.Scoped;
+import etk.web.core.impl.spi.request.RenderEvent;
+import etk.web.core.request.Phase;
+import etk.web.core.request.Response;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 22, 2012  
  */
-public class ServletRenderEvent {
+public class ServletRenderEvent extends ServletMimeEvent implements RenderEvent {
+  public ServletRenderEvent(HttpServletRequest req, HttpServletResponse resp, Map<String, String[]> parameters) {
+    
+    super(req, resp, parameters);
+  }
+  
+  @Override
+  public void setTitle(String title) {
+    
+  }
+
+  @Override
+  public String renderURL(Phase phase, Boolean escapeXML, Map<String, String[]> parameters) {
+    
+    return null;
+  }
+
+  @Override
+  public Scoped getRequestValue(Object key) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setRequestValue(Object key, Scoped value) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public Scoped getSessionValue(Object key) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setSessionValue(Object key, Scoped value) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public Scoped getIdentityValue(Object key) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setIdentityValue(Object key, Scoped value) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void setResponse(Response response) throws IllegalStateException, IOException {
+    
+    
+  }
+
+  @Override
+  public String getContextPath() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+    
+  
 
 }
