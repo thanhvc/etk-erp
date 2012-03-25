@@ -26,38 +26,35 @@ import etk.web.core.plugin.Plugin;
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
- * Mar 21, 2012  
+ * Mar 23, 2012  
  */
-public abstract class AppContext {
+public class InternalAppContext extends AppContext {
+
+  //static final ThreadLocal<Request> current = ThreadLocal<Request>();
   
-  public AppContext() {
+  
+  @Override
+  public ClassLoader getClassLoader() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public List<Plugin> getPlugins() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void invoke(RequestEvent event) throws AppException {
+    // TODO Auto-generated method stub
     
   }
 
-  /**
-   * Holds the classloader for current Web application
-   * @return
-   */
-  public abstract ClassLoader getClassLoader();
-  
-  /**
-   * Holds the plugins which uses to process for Web Application
-   * @TODO user interceptor to replace
-   * 
-   * @return
-   */
-  public abstract List<Plugin> getPlugins();
-  
-  /**
-   * Invokes the Request to Web Application
-   * @param event
-   * @throws AppException
-   */
-  public abstract void invoke(RequestEvent event) throws AppException;
+  @Override
+  public AppDescriptor getDescription() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-  /**
-   * Descriptor which holds the Controller to process the request.
-   * @return
-   */
-  public abstract AppDescriptor getDescription();
 }

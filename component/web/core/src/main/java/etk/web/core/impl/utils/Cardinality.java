@@ -14,38 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.request;
-
-import etk.web.core.impl.application.AppContext;
-import etk.web.core.impl.controller.desciptor.ControllerMethod;
-import etk.web.core.impl.request.Request;
-import etk.web.core.impl.spi.request.RenderEvent;
-import etk.web.core.impl.spi.request.RequestEvent;
-import etk.web.core.impl.spi.request.ResourceEvent;
+package etk.web.core.impl.utils;
 
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
- * Mar 21, 2012  
+ * Mar 24, 2012  
  */
-public class ResourceContext extends RequestContext {
-
-  private ResourceEvent event;
+public enum Cardinality {
   
-  public ResourceContext(Request request, AppContext appContext, ControllerMethod method, ResourceEvent event) {
-    super(request, appContext, method);
-    this.event = event;
-  }
-
-  @Override
-  public Phase getPhase() {
-    return Phase.RESOURCE;
-  }
-
-  @Override
-  protected RequestEvent getRequestEvent() {
-    return event;
-  }
+  SINGLE,
+  
+  ARRAY,
+  
+  LIST
 
 }

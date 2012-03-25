@@ -16,12 +16,35 @@
  */
 package etk.web.core.request;
 
+import etk.web.core.impl.application.AppContext;
+import etk.web.core.impl.controller.desciptor.ControllerMethod;
+import etk.web.core.impl.request.Request;
+import etk.web.core.impl.spi.request.RenderEvent;
+import etk.web.core.impl.spi.request.RequestEvent;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 21, 2012  
  */
-public class RenderContext {
+public class RenderContext extends RequestContext {
+
+  private RenderEvent event;
+  
+  public RenderContext(Request request, AppContext appContext, ControllerMethod method, RenderEvent event) {
+    super(request, appContext, method);
+    this.event = event;
+  }
+
+  @Override
+  public Phase getPhase() {
+    return Phase.RENDER;
+  }
+
+  @Override
+  protected RequestEvent getRequestEvent() {
+    return event;
+  }
 
 }

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package etk.web.core.request;
+package etk.web.core;
 
 import java.io.IOException;
 import java.util.Map;
@@ -23,6 +23,7 @@ import etk.web.core.text.Printer;
 
 
 /**
+ * @TODO Move to impl.request package
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com

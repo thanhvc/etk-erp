@@ -21,8 +21,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import etk.web.core.Response;
 import etk.web.core.impl.spi.request.RenderEvent;
-import etk.web.core.request.Response;
 
 /**
  * Created by The eXo Platform SAS

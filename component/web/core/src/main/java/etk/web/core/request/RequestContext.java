@@ -16,12 +16,50 @@
  */
 package etk.web.core.request;
 
+import java.util.Map;
+
+import etk.web.core.impl.application.AppContext;
+import etk.web.core.impl.controller.desciptor.ControllerMethod;
+import etk.web.core.impl.request.Request;
+import etk.web.core.impl.spi.request.RequestEvent;
+
 /**
  * Created by The eXo Platform SAS
  * Author : eXoPlatform
  *          exo@exoplatform.com
  * Mar 21, 2012  
  */
-public class RequestContext {
+public abstract class RequestContext {
 
+  protected final AppContext appContext;
+  
+  protected final ControllerMethod method;
+  
+  protected final Request request;
+  
+  public RequestContext(Request request, AppContext appContext, ControllerMethod method) {
+    this.request = request;
+    this.appContext = appContext;
+    this.method = method;
+  }
+
+  public AppContext getAppContext() {
+    return appContext;
+  }
+
+  public ControllerMethod getMethod() {
+    return method;
+  }
+  
+  public Map<String, String[]> getParameters() {
+    return request.getParameters();
+  }
+  
+  public HttpContext getHttpContext() {
+    return getRequestEvent().getHttpContext();
+  }
+  
+  public abstract Phase getPhase();
+  
+  protected abstract RequestEvent getRequestEvent();
 }

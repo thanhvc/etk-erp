@@ -19,9 +19,9 @@ package etk.web.core.impl.spi.request;
 import java.io.IOException;
 import java.util.Map;
 
+import etk.web.core.Response;
 import etk.web.core.impl.inject.Scoped;
 import etk.web.core.request.HttpContext;
-import etk.web.core.request.Response;
 
 /**
  * We need to determine these values which keeps with 

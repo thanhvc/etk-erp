@@ -22,8 +22,9 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import etk.web.core.Response;
+import etk.web.core.Response.Content;
 import etk.web.core.impl.spi.request.ResourceEvent;
-import etk.web.core.request.Response;
 import etk.web.core.text.WriterPrinter;
 
 /**
@@ -42,8 +43,8 @@ public class ServletResourceEvent extends ServletMimeEvent implements ResourceEv
   public void setResponse(Response response) throws IllegalStateException, IOException {
     
     //
-    if (response instanceof Response.Content.Resource) {
-      Response.Content.Resource resource = (Response.Content.Resource)response;
+    if (response instanceof Content.Resource) {
+      Content.Resource resource = (Content.Resource)response;
       
       //check the status which return current interaction.
       //if 200 status return, it's OK and resource is available for render.
