@@ -1,0 +1,411 @@
+2012-04-17 00:00:41,609 (main) [    ContainerLoader.java:81 :INFO ] [Startup] Loading containers...
+2012-04-17 00:00:42,017 (main) [ ComponentContainer.java:185:INFO ] Auto-Loading component directory : [/home/thanh_vucong/java/eXoProjects/etk-erp/component]
+2012-04-17 00:00:42,101 (main) [ ComponentContainer.java:249:INFO ] Loading component : [base]
+2012-04-17 00:00:42,137 (main) [ ComponentContainer.java:249:INFO ] Loading component : [geronimo]
+2012-04-17 00:00:42,163 (main) [ ComponentContainer.java:249:INFO ] Loading component : [sql]
+2012-04-17 00:00:42,192 (main) [ ComponentContainer.java:249:INFO ] Loading component : [entity]
+2012-04-17 00:00:42,213 (main) [ ComponentContainer.java:249:INFO ] Loading component : [catalina]
+2012-04-17 00:00:42,237 (main) [ ComponentContainer.java:249:INFO ] Loading component : [security]
+2012-04-17 00:00:42,251 (main) [ ComponentContainer.java:249:INFO ] Loading component : [datafile]
+2012-04-17 00:00:42,269 (main) [ ComponentContainer.java:249:INFO ] Loading component : [minilang]
+2012-04-17 00:00:42,294 (main) [ ComponentContainer.java:249:INFO ] Loading component : [common]
+2012-04-17 00:00:42,320 (main) [ ComponentContainer.java:249:INFO ] Loading component : [service]
+2012-04-17 00:00:42,347 (main) [ ComponentContainer.java:249:INFO ] Loading component : [entityext]
+2012-04-17 00:00:42,373 (main) [ ComponentContainer.java:249:INFO ] Loading component : [webapp]
+2012-04-17 00:00:42,408 (main) [ ComponentContainer.java:249:INFO ] Loading component : [widget]
+2012-04-17 00:00:42,428 (main) [ ComponentContainer.java:249:INFO ] Loading component : [testtools]
+2012-04-17 00:00:42,462 (main) [ ComponentContainer.java:249:INFO ] Loading component : [webtools]
+2012-04-17 00:00:42,489 (main) [ ComponentContainer.java:249:INFO ] Loading component : [images]
+2012-04-17 00:00:42,489 (main) [ ComponentContainer.java:185:INFO ] Auto-Loading component directory : [/home/thanh_vucong/java/eXoProjects/etk-erp/themes]
+2012-04-17 00:00:42,520 (main) [ ComponentContainer.java:249:INFO ] Loading component : [bizznesstime]
+2012-04-17 00:00:42,543 (main) [ ComponentContainer.java:249:INFO ] Loading component : [bluelight]
+2012-04-17 00:00:42,577 (main) [ ComponentContainer.java:249:INFO ] Loading component : [droppingcrumbs]
+2012-04-17 00:00:42,602 (main) [ ComponentContainer.java:249:INFO ] Loading component : [flatgrey]
+2012-04-17 00:00:42,620 (main) [ ComponentContainer.java:249:INFO ] Loading component : [multiflex]
+2012-04-17 00:00:42,630 (main) [ ComponentContainer.java:249:INFO ] Loading component : [tomahawk]
+2012-04-17 00:00:42,631 (main) [ ComponentContainer.java:185:INFO ] Auto-Loading component directory : [/home/thanh_vucong/java/eXoProjects/etk-erp/hot-deploy]
+2012-04-17 00:00:42,696 (main) [ ComponentContainer.java:154:INFO ] All components loaded
+2012-04-17 00:00:42,798 (main) [ClassLoaderContainer.java:52 :INFO ] CachedClassLoader created
+2012-04-17 00:00:42,865 (main) [DelegatorFactoryImpl.java:30 :INFO ] Creating new delegator [default] (main)
+2012-04-17 00:00:43,811 (main) [        ModelReader.java:389:INFO ] FINISHED LOADING ENTITIES - ALL FILES; #Entities=96 #ViewEntities=16 #Fields=906 #Relationships=103 #AutoRelationships=93
+2012-04-17 00:00:43,859 (main) [   GenericDelegator.java:234:INFO ] Doing entity definition check...
+2012-04-17 00:00:43,874 (main) [ ModelEntityChecker.java:508:INFO ] [initReservedWords] array length=1023
+2012-04-17 00:00:43,986 (ofbiz-config-1) [   GenericDelegator.java:262:INFO ] Delegator "default" initializing helper "localderbyolap" for entity group "org.ofbiz.olap".
+2012-04-17 00:00:43,987 (ofbiz-config-0) [   GenericDelegator.java:262:INFO ] Delegator "default" initializing helper "localderby" for entity group "org.ofbiz".
+2012-04-17 00:00:43,997 (ofbiz-config-1) [   GenericDelegator.java:273:INFO ] Doing database check as requested in entityengine.xml with addMissing=true
+2012-04-17 00:00:43,997 (ofbiz-config-0) [   GenericDelegator.java:273:INFO ] Doing database check as requested in entityengine.xml with addMissing=true
+2012-04-17 00:00:45,473 (ofbiz-config-1) [       DatabaseUtil.java:932:INFO ] Database Product Name is Apache Derby
+2012-04-17 00:00:45,474 (ofbiz-config-1) [       DatabaseUtil.java:933:INFO ] Database Product Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:45,474 (ofbiz-config-1) [       DatabaseUtil.java:941:INFO ] Database Driver Name is Apache Derby Embedded JDBC Driver
+2012-04-17 00:00:45,475 (ofbiz-config-1) [       DatabaseUtil.java:942:INFO ] Database Driver Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:45,475 (ofbiz-config-1) [       DatabaseUtil.java:943:INFO ] Database Driver JDBC Version is 4.0
+2012-04-17 00:00:45,475 (ofbiz-config-1) [       DatabaseUtil.java:952:INFO ] Database Setting/Support Information (those with a * should be true):
+2012-04-17 00:00:45,477 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - supports transactions     [true]*
+2012-04-17 00:00:45,478 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation None            [false]
+2012-04-17 00:00:45,478 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation ReadCommitted   [true]
+2012-04-17 00:00:45,478 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation ReadUncommitted [true]
+2012-04-17 00:00:45,478 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation RepeatableRead  [true]
+2012-04-17 00:00:45,479 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation Serializable    [true]
+2012-04-17 00:00:45,479 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - forward only type         [true]
+2012-04-17 00:00:45,479 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - scroll sensitive type     [false]
+2012-04-17 00:00:45,480 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - scroll insensitive type   [true]
+2012-04-17 00:00:45,480 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - is case sensitive         [false]
+2012-04-17 00:00:45,480 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores LowerCase          [false]
+2012-04-17 00:00:45,480 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores MixedCase          [false]
+2012-04-17 00:00:45,481 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores UpperCase          [true]
+2012-04-17 00:00:45,481 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - max table name length     [128]
+2012-04-17 00:00:45,483 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - max column name length    [128]
+2012-04-17 00:00:45,484 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - concurrent connections    [0]
+2012-04-17 00:00:45,485 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - concurrent statements     [0]
+2012-04-17 00:00:45,490 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Entry          [true]
+2012-04-17 00:00:45,490 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Intermediate   [false]
+2012-04-17 00:00:45,493 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Full           [false]
+2012-04-17 00:00:45,493 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Core     [false]
+2012-04-17 00:00:45,494 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Extended [false]
+2012-04-17 00:00:45,494 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Minimum  [true]
+2012-04-17 00:00:45,495 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - outer joins               [true]*
+2012-04-17 00:00:45,495 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - limited outer joins       [true]
+2012-04-17 00:00:45,495 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - full outer joins          [false]
+2012-04-17 00:00:45,495 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - group by                  [true]*
+2012-04-17 00:00:45,496 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - group by not in select    [true]
+2012-04-17 00:00:45,496 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - column aliasing           [true]
+2012-04-17 00:00:45,496 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - order by not in select    [false]
+2012-04-17 00:00:45,497 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - alter table add column    [true]*
+2012-04-17 00:00:45,497 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - non-nullable column       [true]*
+2012-04-17 00:00:45,510 (ofbiz-config-1) [       DatabaseUtil.java:965:INFO ] - default fetchsize        [1]
+2012-04-17 00:00:45,511 (ofbiz-config-1) [       DatabaseUtil.java:974:INFO ] - named parameters         [ SKIPPED ]
+2012-04-17 00:00:45,511 (ofbiz-config-1) [       DatabaseUtil.java:998:INFO ] Getting Table Info From Database
+2012-04-17 00:00:45,857 (ofbiz-config-1) [       DatabaseUtil.java:1135:INFO ] Getting Column Info From Database
+2012-04-17 00:00:46,287 (ofbiz-config-0) [       DatabaseUtil.java:932:INFO ] Database Product Name is Apache Derby
+2012-04-17 00:00:46,288 (ofbiz-config-0) [       DatabaseUtil.java:933:INFO ] Database Product Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:46,288 (ofbiz-config-0) [       DatabaseUtil.java:941:INFO ] Database Driver Name is Apache Derby Embedded JDBC Driver
+2012-04-17 00:00:46,289 (ofbiz-config-0) [       DatabaseUtil.java:942:INFO ] Database Driver Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:46,289 (ofbiz-config-0) [       DatabaseUtil.java:943:INFO ] Database Driver JDBC Version is 4.0
+2012-04-17 00:00:46,290 (ofbiz-config-0) [       DatabaseUtil.java:952:INFO ] Database Setting/Support Information (those with a * should be true):
+2012-04-17 00:00:46,290 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - supports transactions     [true]*
+2012-04-17 00:00:46,291 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - isolation None            [false]
+2012-04-17 00:00:46,291 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - isolation ReadCommitted   [true]
+2012-04-17 00:00:46,292 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - isolation ReadUncommitted [true]
+2012-04-17 00:00:46,292 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - isolation RepeatableRead  [true]
+2012-04-17 00:00:46,292 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - isolation Serializable    [true]
+2012-04-17 00:00:46,293 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - forward only type         [true]
+2012-04-17 00:00:46,293 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - scroll sensitive type     [false]
+2012-04-17 00:00:46,294 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - scroll insensitive type   [true]
+2012-04-17 00:00:46,294 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - is case sensitive         [false]
+2012-04-17 00:00:46,294 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - stores LowerCase          [false]
+2012-04-17 00:00:46,295 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - stores MixedCase          [false]
+2012-04-17 00:00:46,295 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - stores UpperCase          [true]
+2012-04-17 00:00:46,296 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - max table name length     [128]
+2012-04-17 00:00:46,296 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - max column name length    [128]
+2012-04-17 00:00:46,296 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - concurrent connections    [0]
+2012-04-17 00:00:46,297 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - concurrent statements     [0]
+2012-04-17 00:00:46,298 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Entry          [true]
+2012-04-17 00:00:46,298 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Intermediate   [false]
+2012-04-17 00:00:46,306 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Full           [false]
+2012-04-17 00:00:46,311 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Core     [false]
+2012-04-17 00:00:46,311 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Extended [false]
+2012-04-17 00:00:46,324 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Minimum  [true]
+2012-04-17 00:00:46,324 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - outer joins               [true]*
+2012-04-17 00:00:46,325 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - limited outer joins       [true]
+2012-04-17 00:00:46,325 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - full outer joins          [false]
+2012-04-17 00:00:46,325 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - group by                  [true]*
+2012-04-17 00:00:46,326 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - group by not in select    [true]
+2012-04-17 00:00:46,335 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - column aliasing           [true]
+2012-04-17 00:00:46,335 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - order by not in select    [false]
+2012-04-17 00:00:46,335 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - alter table add column    [true]*
+2012-04-17 00:00:46,336 (ofbiz-config-0) [       DatabaseUtil.java:957:INFO ] - non-nullable column       [true]*
+2012-04-17 00:00:46,336 (ofbiz-config-0) [       DatabaseUtil.java:965:INFO ] - default fetchsize        [1]
+2012-04-17 00:00:46,337 (ofbiz-config-0) [       DatabaseUtil.java:974:INFO ] - named parameters         [ SKIPPED ]
+2012-04-17 00:00:46,337 (ofbiz-config-0) [       DatabaseUtil.java:998:INFO ] Getting Table Info From Database
+2012-04-17 00:00:46,496 (ofbiz-config-0) [       DatabaseUtil.java:1135:INFO ] Getting Column Info From Database
+2012-04-17 00:00:46,595 (ofbiz-config-1) [       DatabaseUtil.java:1232:INFO ] Searching in 2 tables for primary key fields ...
+2012-04-17 00:00:46,602 (entity-datasource(localderbyolap)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for CURRENCY_DIMENSION
+2012-04-17 00:00:46,634 (entity-datasource(localderbyolap)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for DATE_DIMENSION
+2012-04-17 00:00:46,645 (ofbiz-config-1) [       DatabaseUtil.java:1243:INFO ] Reviewed 2 primary key fields from database.
+2012-04-17 00:00:46,646 (ofbiz-config-1) [   GenericDelegator.java:262:INFO ] Delegator "default" initializing helper "localderbytenant" for entity group "org.ofbiz.tenant".
+2012-04-17 00:00:46,646 (ofbiz-config-1) [   GenericDelegator.java:273:INFO ] Doing database check as requested in entityengine.xml with addMissing=true
+2012-04-17 00:00:46,994 (ofbiz-config-0) [       DatabaseUtil.java:1232:INFO ] Searching in 92 tables for primary key fields ...
+2012-04-17 00:00:46,995 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for BROWSER_TYPE
+2012-04-17 00:00:47,001 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for CATALINA_SESSION
+2012-04-17 00:00:47,006 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for COUNTRY_ADDRESS_FORMAT
+2012-04-17 00:00:47,010 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for COUNTRY_CAPITAL
+2012-04-17 00:00:47,013 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for COUNTRY_CODE
+2012-04-17 00:00:47,016 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for COUNTRY_TELE_CODE
+2012-04-17 00:00:47,019 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for CUSTOM_METHOD
+2012-04-17 00:00:47,023 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for CUSTOM_METHOD_TYPE
+2012-04-17 00:00:47,033 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for CUSTOM_TIME_PERIOD
+2012-04-17 00:00:47,036 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for DATA_SOURCE
+2012-04-17 00:00:47,041 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for DATA_SOURCE_TYPE
+2012-04-17 00:00:47,043 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for EMAIL_TEMPLATE_SETTING
+2012-04-17 00:00:47,046 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_AUDIT_LOG
+2012-04-17 00:00:47,048 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_GROUP
+2012-04-17 00:00:47,051 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_GROUP_ENTRY
+2012-04-17 00:00:47,056 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_KEY_STORE
+2012-04-17 00:00:47,061 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_SYNC
+2012-04-17 00:00:47,066 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_SYNC_HISTORY
+2012-04-17 00:00:47,071 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_SYNC_INCLUDE
+2012-04-17 00:00:47,074 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_SYNC_INCLUDE_GROUP
+2012-04-17 00:00:47,077 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENTITY_SYNC_REMOVE
+2012-04-17 00:00:47,080 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENUMERATION
+2012-04-17 00:00:47,082 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for ENUMERATION_TYPE
+2012-04-17 00:00:47,085 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for GEO
+2012-04-17 00:00:47,088 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for GEO_ASSOC
+2012-04-17 00:00:47,092 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for GEO_ASSOC_TYPE
+2012-04-17 00:00:47,094 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for GEO_POINT
+2012-04-17 00:00:47,096 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for GEO_TYPE
+2012-04-17 00:00:47,099 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for JOB_SANDBOX
+2012-04-17 00:00:47,102 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for KEYWORD_THESAURUS
+2012-04-17 00:00:47,104 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for NOTE_DATA
+2012-04-17 00:00:47,113 (ofbiz-config-1) [       DatabaseUtil.java:932:INFO ] Database Product Name is Apache Derby
+2012-04-17 00:00:47,114 (ofbiz-config-1) [       DatabaseUtil.java:933:INFO ] Database Product Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:47,114 (ofbiz-config-1) [       DatabaseUtil.java:941:INFO ] Database Driver Name is Apache Derby Embedded JDBC Driver
+2012-04-17 00:00:47,114 (ofbiz-config-1) [       DatabaseUtil.java:942:INFO ] Database Driver Version is 10.8.1.2 - (1095077)
+2012-04-17 00:00:47,115 (ofbiz-config-1) [       DatabaseUtil.java:943:INFO ] Database Driver JDBC Version is 4.0
+2012-04-17 00:00:47,115 (ofbiz-config-1) [       DatabaseUtil.java:952:INFO ] Database Setting/Support Information (those with a * should be true):
+2012-04-17 00:00:47,115 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - supports transactions     [true]*
+2012-04-17 00:00:47,116 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation None            [false]
+2012-04-17 00:00:47,116 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation ReadCommitted   [true]
+2012-04-17 00:00:47,116 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation ReadUncommitted [true]
+2012-04-17 00:00:47,117 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation RepeatableRead  [true]
+2012-04-17 00:00:47,117 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - isolation Serializable    [true]
+2012-04-17 00:00:47,117 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PERIOD_TYPE
+2012-04-17 00:00:47,117 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - forward only type         [true]
+2012-04-17 00:00:47,118 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - scroll sensitive type     [false]
+2012-04-17 00:00:47,118 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - scroll insensitive type   [true]
+2012-04-17 00:00:47,119 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - is case sensitive         [false]
+2012-04-17 00:00:47,119 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores LowerCase          [false]
+2012-04-17 00:00:47,119 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores MixedCase          [false]
+2012-04-17 00:00:47,119 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - stores UpperCase          [true]
+2012-04-17 00:00:47,120 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - max table name length     [128]
+2012-04-17 00:00:47,120 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - max column name length    [128]
+2012-04-17 00:00:47,120 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - concurrent connections    [0]
+2012-04-17 00:00:47,120 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - concurrent statements     [0]
+2012-04-17 00:00:47,121 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PLATFORM_TYPE
+2012-04-17 00:00:47,122 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Entry          [true]
+2012-04-17 00:00:47,123 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Intermediate   [false]
+2012-04-17 00:00:47,123 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ANSI SQL92 Full           [false]
+2012-04-17 00:00:47,123 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Core     [false]
+2012-04-17 00:00:47,124 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Extended [false]
+2012-04-17 00:00:47,124 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - ODBC SQL Grammar Minimum  [true]
+2012-04-17 00:00:47,124 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - outer joins               [true]*
+2012-04-17 00:00:47,125 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - limited outer joins       [true]
+2012-04-17 00:00:47,127 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - full outer joins          [false]
+2012-04-17 00:00:47,127 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - group by                  [true]*
+2012-04-17 00:00:47,128 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - group by not in select    [true]
+2012-04-17 00:00:47,128 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - column aliasing           [true]
+2012-04-17 00:00:47,128 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - order by not in select    [false]
+2012-04-17 00:00:47,129 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - alter table add column    [true]*
+2012-04-17 00:00:47,129 (ofbiz-config-1) [       DatabaseUtil.java:957:INFO ] - non-nullable column       [true]*
+2012-04-17 00:00:47,130 (ofbiz-config-1) [       DatabaseUtil.java:965:INFO ] - default fetchsize        [1]
+2012-04-17 00:00:47,130 (ofbiz-config-1) [       DatabaseUtil.java:974:INFO ] - named parameters         [ SKIPPED ]
+2012-04-17 00:00:47,130 (ofbiz-config-1) [       DatabaseUtil.java:998:INFO ] Getting Table Info From Database
+2012-04-17 00:00:47,135 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTAL_PAGE
+2012-04-17 00:00:47,137 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTAL_PAGE_COLUMN
+2012-04-17 00:00:47,141 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTAL_PAGE_PORTLET
+2012-04-17 00:00:47,150 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTAL_PORTLET
+2012-04-17 00:00:47,158 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTLET_ATTRIBUTE
+2012-04-17 00:00:47,160 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTLET_CATEGORY
+2012-04-17 00:00:47,170 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PORTLET_PORTLET_CATEGORY
+2012-04-17 00:00:47,173 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PROTECTED_VIEW
+2012-04-17 00:00:47,176 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for PROTOCOL_TYPE
+2012-04-17 00:00:47,183 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for RECURRENCE_INFO
+2012-04-17 00:00:47,185 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for RECURRENCE_RULE
+2012-04-17 00:00:47,187 (ofbiz-config-1) [       DatabaseUtil.java:1135:INFO ] Getting Column Info From Database
+2012-04-17 00:00:47,190 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for RUNTIME_DATA
+2012-04-17 00:00:47,215 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SECURITY_GROUP
+2012-04-17 00:00:47,218 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SECURITY_GROUP_PERMISSION
+2012-04-17 00:00:47,228 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SECURITY_PERMISSION
+2012-04-17 00:00:47,232 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SECURITY_PERMISSION_AUTO_GRANT
+2012-04-17 00:00:47,234 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SELENIUM_TEST_SUITE_PATH
+2012-04-17 00:00:47,239 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SEQUENCE_VALUE_ITEM
+2012-04-17 00:00:47,254 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SERVER_HIT
+2012-04-17 00:00:47,263 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SERVER_HIT_BIN
+2012-04-17 00:00:47,272 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SERVER_HIT_TYPE
+2012-04-17 00:00:47,291 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for SERVICE_SEMAPHORE
+2012-04-17 00:00:47,293 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for STANDARD_LANGUAGE
+2012-04-17 00:00:47,295 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for STANDARD_TIME_PERIOD
+2012-04-17 00:00:47,309 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for STATUS_ITEM
+2012-04-17 00:00:47,317 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for STATUS_TYPE
+2012-04-17 00:00:47,321 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for STATUS_VALID_CHANGE
+2012-04-17 00:00:47,337 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TARPITTED_LOGIN_VIEW
+2012-04-17 00:00:47,339 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TEMPORAL_EXPRESSION
+2012-04-17 00:00:47,342 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TEMPORAL_EXPRESSION_ASSOC
+2012-04-17 00:00:47,350 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TESTING
+2012-04-17 00:00:47,361 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TESTING_NODE
+2012-04-17 00:00:47,369 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TESTING_NODE_MEMBER
+2012-04-17 00:00:47,372 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TESTING_TYPE
+2012-04-17 00:00:47,385 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TEST_BLOB
+2012-04-17 00:00:47,387 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TEST_FIELD_TYPE
+2012-04-17 00:00:47,401 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for UOM
+2012-04-17 00:00:47,404 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for UOM_CONVERSION
+2012-04-17 00:00:47,420 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for UOM_CONVERSION_DATED
+2012-04-17 00:00:47,423 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for UOM_GROUP
+2012-04-17 00:00:47,426 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for UOM_TYPE
+2012-04-17 00:00:47,428 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_AGENT
+2012-04-17 00:00:47,441 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_AGENT_METHOD_TYPE
+2012-04-17 00:00:47,445 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_AGENT_TYPE
+2012-04-17 00:00:47,448 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_LOGIN
+2012-04-17 00:00:47,450 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_LOGIN_HISTORY
+2012-04-17 00:00:47,459 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_LOGIN_PASSWORD_HISTORY
+2012-04-17 00:00:47,462 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_LOGIN_SECURITY_GROUP
+2012-04-17 00:00:47,465 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_LOGIN_SESSION
+2012-04-17 00:00:47,477 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_PREFERENCE
+2012-04-17 00:00:47,479 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for USER_PREF_GROUP_TYPE
+2012-04-17 00:00:47,482 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for VISIT
+2012-04-17 00:00:47,485 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for VISITOR
+2012-04-17 00:00:47,487 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for VISUAL_THEME
+2012-04-17 00:00:47,496 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for VISUAL_THEME_RESOURCE
+2012-04-17 00:00:47,499 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for VISUAL_THEME_SET
+2012-04-17 00:00:47,506 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for WEB_PAGE
+2012-04-17 00:00:47,509 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for WEB_SITE
+2012-04-17 00:00:47,514 (entity-datasource(localderby)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for X509_ISSUER_PROVISION
+2012-04-17 00:00:47,517 (ofbiz-config-0) [       DatabaseUtil.java:1243:INFO ] Reviewed 127 primary key fields from database.
+2012-04-17 00:00:47,582 (ofbiz-config-1) [       DatabaseUtil.java:1232:INFO ] Searching in 2 tables for primary key fields ...
+2012-04-17 00:00:47,596 (entity-datasource(localderbytenant)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TENANT
+2012-04-17 00:00:47,617 (entity-datasource(localderbytenant)-0) [       DatabaseUtil.java:1096:INFO ] Fetching primary keys for TENANT_DATA_SOURCE
+2012-04-17 00:00:47,620 (ofbiz-config-1) [       DatabaseUtil.java:1243:INFO ] Reviewed 3 primary key fields from database.
+2012-04-17 00:00:47,883 (main) [  GenericDispatcher.java:77 :INFO ] Creating new dispatcher [entity-default] (main)
+2012-04-17 00:00:47,914 (main) [  ServiceDispatcher.java:89 :INFO ] [ServiceDispatcher] : Creating new instance.
+2012-04-17 00:00:47,987 (main) [ ServiceGroupReader.java:88 :INFO ] Loaded [1] Group definitions from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/groups_test.xml
+2012-04-17 00:00:48,001 (main) [ ServiceGroupReader.java:88 :INFO ] Loaded [4] Group definitions from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/entityext/servicedef/groups.xml
+2012-04-17 00:00:48,036 (ofbiz-config-1) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 0] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/secas_cdyne.xml
+2012-04-17 00:00:48,039 (ofbiz-config-0) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 4] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/secas_test.xml
+2012-04-17 00:00:48,059 (ofbiz-config-1) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 3] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/service/servicedef/secas_test_se.xml
+2012-04-17 00:00:48,383 (main) [         JobManager.java:256:INFO ] No crashed jobs to re-schedule
+2012-04-17 00:00:48,407 (org.ofbiz.service.jms.JmsListenerFactory@1415dbf) [ JmsListenerFactory.java:64 :INFO ] Starting JMS Listener Factory Thread
+2012-04-17 00:00:48,647 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [  2] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services_cdyne.xml
+2012-04-17 00:00:48,769 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [  9] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services_email.xml
+2012-04-17 00:00:48,819 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [  2] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services_olap.xml
+2012-04-17 00:00:48,972 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [ 13] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services_security.xml
+2012-04-17 00:00:49,116 (ofbiz-config-0) [ ModelServiceReader.java:197:INFO ] Loaded [ 95] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services.xml
+2012-04-17 00:00:49,260 (ofbiz-config-0) [ ModelServiceReader.java:197:INFO ] Loaded [ 11] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/service/servicedef/services.xml
+2012-04-17 00:00:49,284 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [ 36] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/services_test.xml
+2012-04-17 00:00:49,436 (ofbiz-config-0) [ ModelServiceReader.java:197:INFO ] Loaded [ 18] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/service/servicedef/services_test_se.xml
+2012-04-17 00:00:49,480 (ofbiz-config-0) [ ModelServiceReader.java:197:INFO ] Loaded [  1] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/testtools/servicedef/services.xml
+2012-04-17 00:00:49,588 (ofbiz-config-0) [ ModelServiceReader.java:197:INFO ] Loaded [ 10] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/webtools/servicedef/services.xml
+2012-04-17 00:00:49,622 (ofbiz-config-1) [ ModelServiceReader.java:197:INFO ] Loaded [ 41] Services from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/entityext/servicedef/services.xml
+2012-04-17 00:00:49,646 (ofbiz-config-0) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 4] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/secas_test.xml
+2012-04-17 00:00:49,649 (ofbiz-config-0) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 0] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/servicedef/secas_cdyne.xml
+2012-04-17 00:00:49,661 (ofbiz-config-1) [     ServiceEcaUtil.java:124:INFO ] Loaded [ 3] Service ECA Rules from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/service/servicedef/secas_test_se.xml
+2012-04-17 00:00:49,892 (main) [  CatalinaContainer.java:377:INFO ] createHost(StandardEngine[default-server], 0.0.0.0)
+2012-04-17 00:00:51,515 (main) [            SSLImpl.java:47 :INFO ] SSLImpl loaded; using custom ServerSocketFactory
+2012-04-17 00:00:51,559 (main) [    ContainerLoader.java:233:INFO ] [Startup] Starting containers...
+2012-04-17 00:00:51,579 (main) [  GenericDispatcher.java:77 :INFO ] Creating new dispatcher [RMIDispatcher] (main)
+2012-04-17 00:00:52,273 (main) [  CatalinaContainer.java:520:INFO ] createContext(tomahawk)
+2012-04-17 00:00:52,275 (main) [  CatalinaContainer.java:520:INFO ] createContext(multiflex)
+2012-04-17 00:00:52,275 (main) [  CatalinaContainer.java:520:INFO ] createContext(flatgrey)
+2012-04-17 00:00:52,275 (main) [  CatalinaContainer.java:520:INFO ] createContext(droppingcrumbs)
+2012-04-17 00:00:52,275 (main) [  CatalinaContainer.java:520:INFO ] createContext(bluelight)
+2012-04-17 00:00:52,275 (main) [  CatalinaContainer.java:520:INFO ] createContext(bizznesstime)
+2012-04-17 00:00:52,277 (main) [  CatalinaContainer.java:520:INFO ] createContext(tempfiles)
+2012-04-17 00:00:52,277 (main) [  CatalinaContainer.java:520:INFO ] createContext(images)
+2012-04-17 00:00:52,277 (main) [  CatalinaContainer.java:520:INFO ] createContext(webtools)
+2012-04-17 00:00:52,349 (catalina-startup-0) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/tomahawk])
+2012-04-17 00:00:52,366 (catalina-startup-1) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/multiflex])
+2012-04-17 00:00:53,058 (catalina-startup-0) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/flatgrey])
+2012-04-17 00:00:53,201 (catalina-startup-1) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/droppingcrumbs])
+2012-04-17 00:00:53,315 (catalina-startup-0) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/bluelight])
+2012-04-17 00:00:53,409 (catalina-startup-1) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/bizznesstime])
+2012-04-17 00:00:53,512 (catalina-startup-0) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/tempfiles])
+2012-04-17 00:00:53,599 (catalina-startup-1) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/images])
+2012-04-17 00:00:53,687 (catalina-startup-0) [  CatalinaContainer.java:596:INFO ] host[StandardEngine[default-server].StandardHost[0.0.0.0]].addChild(StandardContext[/webtools])
+2012-04-17 00:00:53,953 (catalina-startup-0) [  GenericDispatcher.java:77 :INFO ] Creating new dispatcher [webtools] (catalina-startup-0)
+2012-04-17 00:00:53,959 (catalina-startup-0) [     ControlServlet.java:74 :INFO ] LOADING WEBAPP [webtools] Open For Business - Web Tools, located at /home/thanh_vucong/java/eXoProjects/etk-erp/component/webtools/webapp/webtools/
+2012-04-17 00:00:54,088 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.069s, 109 requests, 68 views in jndi:/0.0.0.0/webtools/WEB-INF/controller.xml
+2012-04-17 00:00:54,137 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.011s, 34 requests, 19 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/common-controller.xml
+2012-04-17 00:00:54,162 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0040s, 27 requests, 11 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/portal-controller.xml
+2012-04-17 00:00:54,181 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0070s, 30 requests, 13 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/security-controller.xml
+2012-04-17 00:00:54,189 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0010s, 5 requests, 0 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/tempexpr-controller.xml
+2012-04-17 00:00:54,203 (catalina-startup-0) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0020s, 9 requests, 1 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/testtools/webapp/testtools/WEB-INF/controller.xml
+2012-04-17 00:00:54,396 (catalina-startup-0) [   FreeMarkerWorker.java:109:INFO ] loading properties: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/webapp/config/freemarkerTransforms.properties
+2012-04-17 00:00:54,443 (catalina-startup-0) [   FreeMarkerWorker.java:109:INFO ] loading properties: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/widget/config/freemarkerTransforms.properties
+2012-04-17 00:00:54,563 (catalina-startup-0) [  GenericDispatcher.java:77 :INFO ] Creating new dispatcher [default] (catalina-startup-0)
+2012-04-17 00:00:54,632 (main) [  CatalinaContainer.java:255:INFO ] Connector AJP/1.3 @ 8009 - not-secure [org.apache.jk.server.JkCoyoteHandler] started.
+2012-04-17 00:00:54,632 (main) [  CatalinaContainer.java:253:INFO ] Connector null @ 8080 - not-secure [org.apache.coyote.http11.Http11Protocol] started.
+2012-04-17 00:00:54,632 (main) [  CatalinaContainer.java:253:INFO ] Connector null @ 8443 - secure [org.apache.coyote.http11.Http11Protocol] started.
+2012-04-17 00:00:54,633 (main) [  CatalinaContainer.java:258:INFO ] Started Apache Tomcat/6.0.33
+2012-04-17 00:01:00,896 (http-0.0.0.0-8080-1) [ControlEventListener.java:64 :INFO ] Creating session: 7E1BD93A85ECBAAD845707D8E7F6FA0E.jvm1
+2012-04-17 00:01:00,903 (http-0.0.0.0-8080-1) [      ContextFilter.java:209:INFO ] [Domain]: localhost [Request]: /webtools/
+2012-04-17 00:01:00,953 (http-0.0.0.0-8080-1) [      ContextFilter.java:209:INFO ] [Domain]: localhost [Request]: /webtools/control/main
+2012-04-17 00:01:01,021 (http-0.0.0.0-8080-1) [     ControlServlet.java:141:INFO ] [[[main(Domain:http://localhost)] Request Begun, encoding=[UTF-8]- total:0.0,since last(Begin):0.0]]
+2012-04-17 00:01:01,032 (http-0.0.0.0-8080-1) [       VisitHandler.java:232:INFO ] Found visitorId [10000] in cookie
+2012-04-17 00:01:01,138 (http-0.0.0.0-8080-1) [       SequenceUtil.java:348:INFO ] Got bank of sequenced IDs for [Visit]; curSeqId=10010, maxSeqId=10020, bankSize=10
+2012-04-17 00:01:01,245 (http-0.0.0.0-8080-1) [     RequestHandler.java:707:INFO ] Sending redirect to: [https://localhost:8443/webtools/control/main], sessionId=7E1BD93A85ECBAAD845707D8E7F6FA0E.jvm1
+2012-04-17 00:01:01,395 (http-0.0.0.0-8080-1) [       ServerHitBin.java:627:INFO ] Visit delegatorName=default, ServerHitBin delegatorName=default
+2012-04-17 00:01:01,430 (http-0.0.0.0-8080-1) [     ControlServlet.java:324:INFO ] [[[main(Domain:http://localhost)] Request Done- total:0.404,since last([main(Domain:http...):0.404]]
+2012-04-17 00:01:01,483 (http-0.0.0.0-8443-1) [     ControlServlet.java:141:INFO ] [[[main(Domain:https://localhost)] Request Begun, encoding=[UTF-8]- total:0.0,since last(Begin):0.0]]
+2012-04-17 00:01:01,484 (http-0.0.0.0-8443-1) [     RequestHandler.java:283:INFO ] This is the first request in this visit. sessionId=7E1BD93A85ECBAAD845707D8E7F6FA0E.jvm1
+2012-04-17 00:01:01,493 (http-0.0.0.0-8443-1) [     RequestHandler.java:750:INFO ] Rendering View [main], sessionId=7E1BD93A85ECBAAD845707D8E7F6FA0E.jvm1
+2012-04-17 00:01:01,499 (http-0.0.0.0-8443-1) [     UtilJ2eeCompat.java:69 :INFO ] serverInfo: apache tomcat/6.0.33
+2012-04-17 00:01:01,499 (http-0.0.0.0-8443-1) [     UtilJ2eeCompat.java:78 :INFO ] Apache Tomcat detected, using response.getWriter to write text out instead of response.getOutputStream
+2012-04-17 00:01:02,065 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Could not find template in cache, creating new one; id=[component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] ]
+2012-04-17 00:01:02,076 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@3309c542
+2012-04-17 00:01:02,092 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Could not find template in cache, creating new one; id=[component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] ]
+2012-04-17 00:01:02,092 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@aeb9dc52
+2012-04-17 00:01:02,267 (http-0.0.0.0-8443-1) [     AbstractEngine.java:80 :INFO ] Loaded Service Locations : {main-rmi=rmi://localhost:1099/RMIDispatcher, main-http=http://localhost:8080/webtools/control/httpService, entity-sync-rmi=rmi://localhost:1099/RMIDispatcher, entity-sync-http=http://localhost:8080/webtools/control/httpService, rita-rmi=rmi://localhost:1099/RMIDispatcher, eedcc-test=http://localhost:8080/webtools/control/httpService}
+2012-04-17 00:01:02,343 (http-0.0.0.0-8443-1) [  ServiceDispatcher.java:604:INFO ] Sync service [webtools/getUserPreferenceGroup] finished in [98] milliseconds with response [{responseMessage=success, userPrefMap={VISUAL_THEME=TOMAHAWK}}]
+2012-04-17 00:01:02,353 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:02,354 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:02,599 (http-0.0.0.0-8443-1) [   FreeMarkerWorker.java:109:INFO ] loading properties: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/webapp/config/freemarkerTransforms.properties
+2012-04-17 00:01:02,599 (http-0.0.0.0-8443-1) [   FreeMarkerWorker.java:109:INFO ] loading properties: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/widget/config/freemarkerTransforms.properties
+2012-04-17 00:01:02,626 (http-0.0.0.0-8443-1) [      ScreenFactory.java:130:INFO ] Got 11 screens in 0.268s from: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/webtools/widget/CommonScreens.xml
+2012-04-17 00:01:02,696 (http-0.0.0.0-8443-1) [     UtilProperties.java:1056:INFO ] ResourceBundle TemporalExpressionUiLabels (en_US) created in 0.021s with 24 properties
+2012-04-17 00:01:03,041 (http-0.0.0.0-8443-1) [     UtilProperties.java:1056:INFO ] ResourceBundle WebtoolsUiLabels (en_US) created in 0.343s with 486 properties
+2012-04-17 00:01:03,096 (http-0.0.0.0-8443-1) [     UtilProperties.java:1056:INFO ] ResourceBundle SecurityUiLabels (en_US) created in 0.054s with 54 properties
+2012-04-17 00:01:03,802 (http-0.0.0.0-8443-1) [     UtilProperties.java:1056:INFO ] ResourceBundle CommonUiLabels (en_US) created in 0.705s with 810 properties
+2012-04-17 00:01:04,521 (http-0.0.0.0-8443-1) [      ScreenFactory.java:130:INFO ] Got 22 screens in 0.696s from: file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/widget/CommonScreens.xml
+2012-04-17 00:01:05,125 (http-0.0.0.0-8443-1) [  ServiceDispatcher.java:604:INFO ] Sync service [webtools/getVisualThemeResources] finished in [316] milliseconds with response [{themeResources={companyName=OFBiz: Web Tools, companySubtitle=Part of the Open For Business Family of Open Source Software, javaScripts={/images/jquery/jquery-1.6.2.min.js, /images/jquery/ui/development-bundle/ui/jquery.ui.datepicker.js, /images/jquery/plugins/fjTimer/jquerytimer-min.js, /images/jquery/plugins/validate/jquery.validate.min.js, /images/jquery/plugins/jeditable/jquery.jeditable.js, /images/jquery/ui/js/jquery-ui-1.8.13.custom.min.js, /images/jquery/plugins/jquery.maskedinput-1.2.2.min.js, /images/jquery/plugins/datetimepicker/jquery-ui-timepicker-addon-0.9.3.min.js, /images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.js, /images/jquery/plugins/validate/localization/messages_en.js, /images/jquery/ui/development-bundle/ui/i18n/jquery.ui.datepicker-en.js, /images/jquery/plugins/datejs/date-en-US.js, /images/selectall.js, /images/fieldlookup.js, /images/GooglemapMarkers.js, /images/getDependentDropdownValues.js, /images/selectMultipleRelatedValues.js}, styleSheets={/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css}, commonHeaderImageLinkUrl=main, VT_DOCBOOKSTYLESHEET={/tomahawk/webapp/tomahawk/css/docbook.css}, VT_FTR_TMPLT_LOC={component://tomahawk/includes/footer.ftl}, VT_HDR_IMAGE_URL={/images/ofbiz_logo.gif}, VT_HDR_JAVASCRIPT={/tomahawk/js/dropdown.js}, VT_HDR_TMPLT_LOC={component://tomahawk/includes/header.ftl}, VT_HELPSTYLESHEET={/tomahawk/css/help.css}, VT_MSG_TMPLT_LOC={component://common/webcommon/includes/messages.ftl}, VT_NAME={TOMAHAWK}, VT_NAV_CLOSE_TMPLT={component://tomahawk/includes/appbarClose.ftl}, VT_NAV_OPEN_TMPLT={component://tomahawk/includes/appbarOpen.ftl}, VT_SCREENSHOT={/tomahawk/screenshot.jpg}, VT_SHORTCUT_ICON={/images/ofbiz.ico}, VT_STYLESHEET={/tomahawk/css/style.css}}, responseMessage=success}]
+2012-04-17 00:01:05,153 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Could not find template in cache, creating new one; id=[component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] ]
+2012-04-17 00:01:05,153 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@3309c542
+2012-04-17 00:01:05,159 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Could not find template in cache, creating new one; id=[component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] ]
+2012-04-17 00:01:05,159 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@aeb9dc52
+2012-04-17 00:01:05,336 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0040s, 109 requests, 68 views in jndi:/0.0.0.0/webtools/WEB-INF/controller.xml
+2012-04-17 00:01:05,358 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0030s, 34 requests, 19 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/common-controller.xml
+2012-04-17 00:01:05,378 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0060s, 27 requests, 11 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/portal-controller.xml
+2012-04-17 00:01:05,395 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0010s, 30 requests, 13 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/security-controller.xml
+2012-04-17 00:01:05,407 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0s, 5 requests, 0 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/common/webcommon/WEB-INF/tempexpr-controller.xml
+2012-04-17 00:01:05,425 (http-0.0.0.0-8443-1) [    ConfigXMLReader.java:120:INFO ] controller loaded: 0.0010s, 9 requests, 1 views in file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/testtools/webapp/testtools/WEB-INF/controller.xml
+2012-04-17 00:01:05,459 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,459 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,591 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,591 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,615 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,616 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,651 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,652 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,670 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,671 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:05,717 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Could not find template in cache, creating new one; id=[component://tomahawk/includes/../../../runtime/svninfo.ftl[en_US,UTF-8,parsed] ]
+2012-04-17 00:01:05,718 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://tomahawk/includes/../../../runtime/svninfo.ftl[en_US,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@b687a3b1
+2012-04-17 00:01:05,732 (http-0.0.0.0-8443-1) [       ServerHitBin.java:627:INFO ] Visit delegatorName=default, ServerHitBin delegatorName=default
+2012-04-17 00:01:05,757 (http-0.0.0.0-8443-1) [     ControlServlet.java:324:INFO ] [[[main(Domain:https://localhost)] Request Done- total:4.274,since last([main(Domain:http...):4.274]]
+2012-04-17 00:01:07,222 (http-0.0.0.0-8443-1) [      ContextFilter.java:209:INFO ] [Domain]: localhost [Request]: /webtools/control/checkLogin/main
+2012-04-17 00:01:07,223 (http-0.0.0.0-8443-1) [     ControlServlet.java:141:INFO ] [[[checkLogin(Domain:https://localhost)] Request Begun, encoding=[UTF-8]- total:0.0,since last(Begin):0.0]]
+2012-04-17 00:01:07,224 (http-0.0.0.0-8443-1) [     RequestHandler.java:648:INFO ] Ran Event [java:org.ofbiz.webapp.control.LoginWorker#checkLogin] from [request], result is [error]
+2012-04-17 00:01:07,224 (http-0.0.0.0-8443-1) [     RequestHandler.java:750:INFO ] Rendering View [login], sessionId=7E1BD93A85ECBAAD845707D8E7F6FA0E.jvm1
+2012-04-17 00:01:07,225 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1334595662066 != file lastModified=1334595667225
+2012-04-17 00:01:07,225 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@3309c542
+2012-04-17 00:01:07,234 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1334595662092 != file lastModified=1334595667234
+2012-04-17 00:01:07,234 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] Compiling FreeMarker template component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed]  from org.ofbiz.base.util.template.FreeMarkerWorker$FlexibleTemplateSource@aeb9dc52
+2012-04-17 00:01:07,289 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,289 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,298 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,305 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,332 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,332 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,335 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,336 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,338 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,339 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,361 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,362 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,379 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://common/webcommon/includes/htmlTemplate.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,379 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://widget/templates/htmlFormMacroLibrary.ftl[en,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,380 (http-0.0.0.0-8443-1) [ Log4JLoggerFactory.java:81 :DEBUG] component://tomahawk/includes/../../../runtime/svninfo.ftl[en_US,UTF-8,parsed] cached copy not yet stale; using cached.
+2012-04-17 00:01:07,394 (http-0.0.0.0-8443-1) [       ServerHitBin.java:627:INFO ] Visit delegatorName=default, ServerHitBin delegatorName=default
+2012-04-17 00:01:07,424 (http-0.0.0.0-8443-1) [     ControlServlet.java:324:INFO ] [[[checkLogin(Domain:https://localhost)] Request Done- total:0.2,since last([checkLogin(Domai...):0.2]]
+2012-04-17 00:01:08,414 (org.ofbiz.service.jms.JmsListenerFactory@1415dbf) [ JmsListenerFactory.java:74 :INFO ] JMS Listener Factory Thread Finished; All listeners connected.
+2012-04-17 00:01:12,557 (Thread-0) [    ContainerLoader.java:256:INFO ] Shutting down containers
+2012-04-17 00:01:12,597 (Thread-0) [  ServiceDispatcher.java:191:INFO ] De-Registering dispatcher: webtools
+2012-04-17 00:01:12,598 (Thread-0) [  ServiceDispatcher.java:191:INFO ] De-Registering dispatcher: RMIDispatcher
+2012-04-17 00:01:12,626 (Thread-0) [  ServiceDispatcher.java:191:INFO ] De-Registering dispatcher: RMIDispatcher

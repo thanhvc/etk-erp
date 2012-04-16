@@ -367,8 +367,8 @@
         </activation>
         <modules>
            <module>component</module>
-           <module>demo</module>
            <module>server</module>
+           <module>demo</module>
            <module>packaging</module>
         </modules>
      </profile>

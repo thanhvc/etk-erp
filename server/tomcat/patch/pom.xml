@@ -29,7 +29,7 @@
   </parent>
 
   <groupId>org.etk.erp</groupId>
-  <artifactId>erp.server.tomcat.patch</artifactId>
+  <artifactId>etk.erp.server.tomcat.patch</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>etk ERP Server (server/tomcat/patch)</name>
   <description>etk ERP Server (server/tomcat/patch)</description>

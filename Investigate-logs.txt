@@ -1,0 +1,2 @@
+Note:
+etk-minilang: Makes exception so It can not generates HTML for display.

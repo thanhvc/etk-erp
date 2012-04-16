@@ -1,0 +1,30 @@
+----------------------------------------------------------------
+Tue Apr 17 00:00:44 ICT 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-0136-bc19-6c72-ffffa94ec81a 
+on database directory /home/thanh_vucong/java/eXoProjects/etk-erp/runtime/data/derby/ofbizolap  with class loader org.ofbiz.base.start.Classpath$NativeLibClassLoader@1ac3379 
+Loaded from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/entity/lib/jdbc/derby-10.8.1.2.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_23-b05
+user.dir=/home/thanh_vucong/java/eXoProjects/etk-erp
+derby.system.home=runtime/data/derby
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Apr 17 00:00:45 ICT 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance 601a400f-0136-bc19-6c72-ffffa94ec81a 
+on database directory /home/thanh_vucong/java/eXoProjects/etk-erp/runtime/data/derby/ofbiz  with class loader org.ofbiz.base.start.Classpath$NativeLibClassLoader@1ac3379 
+Loaded from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/entity/lib/jdbc/derby-10.8.1.2.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_23-b05
+user.dir=/home/thanh_vucong/java/eXoProjects/etk-erp
+derby.system.home=runtime/data/derby
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Apr 17 00:00:46 ICT 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance 48d7402a-0136-bc19-6c72-ffffa94ec81a 
+on database directory /home/thanh_vucong/java/eXoProjects/etk-erp/runtime/data/derby/ofbiztenant  with class loader org.ofbiz.base.start.Classpath$NativeLibClassLoader@1ac3379 
+Loaded from file:/home/thanh_vucong/java/eXoProjects/etk-erp/component/entity/lib/jdbc/derby-10.8.1.2.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_23-b05
+user.dir=/home/thanh_vucong/java/eXoProjects/etk-erp
+derby.system.home=runtime/data/derby
+Database Class Loader started - derby.database.classpath=''

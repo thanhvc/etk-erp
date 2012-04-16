@@ -24,7 +24,7 @@ function getModule(params) {
   module.server = {}
 
   module.server.tomcat = {}
-  module.server.tomcat.patch = new Project("org.etk.erp", "erp.server.tomcat.patch", "jar", module.version);
+  module.server.tomcat.patch = new Project("org.etk.erp", "etk.erp.server.tomcat.patch", "jar", module.version);
 
    
   return module;

@@ -15,6 +15,24 @@
   <description>etk ERP Engineering Toolkit Framework Component</description>
 
   <modules>
+    <module>catalina</module>
+    <module>start</module>
+    <module>base</module>
+    <module>sql</module>
+    <module>geronimo</module>
+    <module>entity</module>
+    <module>entityext</module>
+    <module>security</module>
+    <module>widget</module>
+    <module>datafile</module>
+    <module>service</module>
+    <module>minilang</module>
+    <module>common</module>
+    <module>webapp</module>
+<!--    <module>bi</module>
+    <module>birt</module>-->
+    <module>testtools</module>
+    <module>webtools</module>
     <module>web</module>
   </modules>
 

@@ -75,7 +75,7 @@
    </dependency>
    <dependency>
       <groupId>org.etk.erp</groupId>
-      <artifactId>erp.server.tomcat.patch</artifactId>
+      <artifactId>etk.erp.server.tomcat.patch</artifactId>
       <version>${project.version}</version>
       <type>jar</type>
    </dependency>
