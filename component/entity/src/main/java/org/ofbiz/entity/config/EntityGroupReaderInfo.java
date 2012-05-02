@@ -23,16 +23,15 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class EntityGroupReaderInfo extends ResourceInfo {
-    public EntityGroupReaderInfo(Element element) {
-        super(element);
-        String loader = element.getAttribute("loader");
-        String location = element.getAttribute("location");
+  public EntityGroupReaderInfo(Element element) {
+    super(element);
+    String loader = element.getAttribute("loader");
+    String location = element.getAttribute("location");
 
-        if (UtilValidate.isNotEmpty(loader) && UtilValidate.isNotEmpty(location)) {
-            resourceElements.add(0, element);
-        }
+    if (UtilValidate.isNotEmpty(loader) && UtilValidate.isNotEmpty(location)) {
+      resourceElements.add(0, element);
     }
+  }
 }

@@ -22,15 +22,14 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class EntityDataReaderInfo extends ResourceInfo {
 
-    public EntityDataReaderInfo(Element element) {
-        super(element);
-    }
+  public EntityDataReaderInfo(Element element) {
+    super(element);
+  }
 
-    public EntityDataReaderInfo(String name) {
-        super(name);
-    }
+  public EntityDataReaderInfo(String name) {
+    super(name);
+  }
 }

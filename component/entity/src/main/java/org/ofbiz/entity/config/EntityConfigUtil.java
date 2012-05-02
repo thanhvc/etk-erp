@@ -31,7 +31,8 @@ import org.ofbiz.entity.GenericEntityException;
 import org.w3c.dom.Element;
 
 /**
- * Misc. utility method for dealing with the entityengine.xml fileModelFieldTypeReader
+ * Misc. utility method for dealing with the entityengine.xml
+ * fileModelFieldTypeReader
  */
 public class EntityConfigUtil {
 
@@ -82,9 +83,7 @@ public class EntityConfigUtil {
     try {
       initialize(getXmlRootElement());
     } catch (Exception e) {
-      Debug.logError(e,
-                     "Error loading entity config XML file " + ENTITY_ENGINE_XML_FILENAME,
-                     module);
+      Debug.logError(e, "Error loading entity config XML file " + ENTITY_ENGINE_XML_FILENAME, module);
     }
   }
 
@@ -93,8 +92,7 @@ public class EntityConfigUtil {
       ResourceLoader.invalidateDocument(ENTITY_ENGINE_XML_FILENAME);
       initialize(getXmlRootElement());
     } catch (Exception e) {
-      throw new GenericEntityException("Error reloading entity config XML file "
-          + ENTITY_ENGINE_XML_FILENAME, e);
+      throw new GenericEntityException("Error reloading entity config XML file " + ENTITY_ENGINE_XML_FILENAME, e);
     }
   }
 
@@ -104,17 +102,14 @@ public class EntityConfigUtil {
 
   private EntityConfigUtil(Element rootElement) throws GenericEntityException {
     // load the transaction factory
-    Element transactionFactoryElement = UtilXml.firstChildElement(rootElement,
-                                                                  "transaction-factory");
+    Element transactionFactoryElement = UtilXml.firstChildElement(rootElement, "transaction-factory");
     if (transactionFactoryElement == null) {
-      throw new GenericEntityConfException("ERROR: no transaction-factory definition was found in "
-          + ENTITY_ENGINE_XML_FILENAME);
+      throw new GenericEntityConfException("ERROR: no transaction-factory definition was found in " + ENTITY_ENGINE_XML_FILENAME);
     }
 
     txFactoryClass = transactionFactoryElement.getAttribute("class");
 
-    Element userTxJndiElement = UtilXml.firstChildElement(transactionFactoryElement,
-                                                          "user-transaction-jndi");
+    Element userTxJndiElement = UtilXml.firstChildElement(transactionFactoryElement, "user-transaction-jndi");
     if (userTxJndiElement != null) {
       txFactoryUserTxJndiName = userTxJndiElement.getAttribute("jndi-name");
       txFactoryUserTxJndiServerName = userTxJndiElement.getAttribute("jndi-server-name");
@@ -123,8 +118,7 @@ public class EntityConfigUtil {
       txFactoryUserTxJndiServerName = null;
     }
 
-    Element txMgrJndiElement = UtilXml.firstChildElement(transactionFactoryElement,
-                                                         "transaction-manager-jndi");
+    Element txMgrJndiElement = UtilXml.firstChildElement(transactionFactoryElement, "transaction-manager-jndi");
     if (txMgrJndiElement != null) {
       txFactoryTxMgrJndiName = txMgrJndiElement.getAttribute("jndi-name");
       txFactoryTxMgrJndiServerName = txMgrJndiElement.getAttribute("jndi-server-name");
@@ -136,8 +130,7 @@ public class EntityConfigUtil {
     // load the connection factory
     Element connectionFactoryElement = UtilXml.firstChildElement(rootElement, "connection-factory");
     if (connectionFactoryElement == null) {
-      throw new GenericEntityConfException("ERROR: no connection-factory definition was found in "
-          + ENTITY_ENGINE_XML_FILENAME);
+      throw new GenericEntityConfException("ERROR: no connection-factory definition was found in " + ENTITY_ENGINE_XML_FILENAME);
     }
 
     connFactoryClass = connectionFactoryElement.getAttribute("class");

@@ -48,14 +48,14 @@ import org.xml.sax.SAXException;
  */
 public class ComponentConfig {
 
-  public static final String                     module                       = ComponentConfig.class.getName();
+  public static final String module = ComponentConfig.class.getName();
 
-  public static final String                     OFBIZ_COMPONENT_XML_FILENAME = "etk-component.xml";
+  public static final String OFBIZ_COMPONENT_XML_FILENAME = "etk-component.xml";
 
   // this is not a UtilCache because reloading may cause problems
-  protected static Map<String, ComponentConfig>  componentConfigs             = FastMap.newInstance();
+  protected static Map<String, ComponentConfig> componentConfigs = FastMap.newInstance();
 
-  protected static Map<String, List<WebappInfo>> serverWebApps                = FastMap.newInstance();
+  protected static Map<String, List<WebappInfo>> serverWebApps = FastMap.newInstance();
 
   public static ComponentConfig getComponentConfig(String globalName) throws ComponentException {
     // TODO: we need to look up the rootLocation from the container config, or
@@ -77,7 +77,9 @@ public class ComponentConfig {
           if (componentConfig == null) {
             componentConfig = new ComponentConfig(globalName, rootLocation);
             if (componentConfigs.containsKey(componentConfig.getGlobalName())) {
-              Debug.logWarning("WARNING: Loading ofbiz-component using a global name that already exists, will over-write: " + componentConfig.getGlobalName(), module);
+              Debug.logWarning("WARNING: Loading ofbiz-component using a global name that already exists, will over-write: "
+                                   + componentConfig.getGlobalName(),
+                               module);
             }
             if (componentConfig.enabled()) {
               componentConfigs.put(componentConfig.getGlobalName(), componentConfig);
@@ -105,7 +107,8 @@ public class ComponentConfig {
     if (values != null) {
       return values;
     } else {
-      Debug.logWarning("No components were found, something is probably missing or incorrect in the component-load setup.", module);
+      Debug.logWarning("No components were found, something is probably missing or incorrect in the component-load setup.",
+                       module);
       return FastList.newInstance();
     }
   }
@@ -234,7 +237,9 @@ public class ComponentConfig {
     return cc.isFileResourceLoader(resourceLoaderName);
   }
 
-  public static InputStream getStream(String componentName, String resourceLoaderName, String location) throws ComponentException {
+  public static InputStream getStream(String componentName,
+                                      String resourceLoaderName,
+                                      String location) throws ComponentException {
     ComponentConfig cc = ComponentConfig.getComponentConfig(componentName);
     if (cc == null) {
       throw new ComponentException("Could not find component with name: " + componentName);
@@ -250,7 +255,9 @@ public class ComponentConfig {
     return cc.getURL(resourceLoaderName, location);
   }
 
-  public static String getFullLocation(String componentName, String resourceLoaderName, String location) throws ComponentException {
+  public static String getFullLocation(String componentName,
+                                       String resourceLoaderName,
+                                       String location) throws ComponentException {
     ComponentConfig cc = ComponentConfig.getComponentConfig(componentName);
     if (cc == null) {
       throw new ComponentException("Could not find component with name: " + componentName);
@@ -274,7 +281,9 @@ public class ComponentConfig {
     return ComponentConfig.getAppBarWebInfos(serverName, null, menuName);
   }
 
-  public static List<WebappInfo> getAppBarWebInfos(String serverName, Comparator<? super String> comp, String menuName) {
+  public static List<WebappInfo> getAppBarWebInfos(String serverName,
+                                                   Comparator<? super String> comp,
+                                                   String menuName) {
     List<WebappInfo> webInfos = serverWebApps.get(serverName + menuName);
     if (webInfos == null) {
       synchronized (ComponentConfig.class) {
@@ -329,27 +338,27 @@ public class ComponentConfig {
   }
 
   // ========== component info fields ==========
-  protected String                          globalName           = null;
+  protected String globalName = null;
 
-  protected String                          rootLocation         = null;
+  protected String rootLocation = null;
 
-  protected String                          componentName        = null;
+  protected String componentName = null;
 
-  protected boolean                         enabled              = true;
+  protected boolean enabled = true;
 
-  protected Map<String, ResourceLoaderInfo> resourceLoaderInfos  = FastMap.newInstance();
+  protected Map<String, ResourceLoaderInfo> resourceLoaderInfos = FastMap.newInstance();
 
-  protected List<ClasspathInfo>             classpathInfos       = FastList.newInstance();
+  protected List<ClasspathInfo> classpathInfos = FastList.newInstance();
 
-  protected List<EntityResourceInfo>        entityResourceInfos  = FastList.newInstance();
+  protected List<EntityResourceInfo> entityResourceInfos = FastList.newInstance();
 
-  protected List<ServiceResourceInfo>       serviceResourceInfos = FastList.newInstance();
+  protected List<ServiceResourceInfo> serviceResourceInfos = FastList.newInstance();
 
-  protected List<TestSuiteInfo>             testSuiteInfos       = FastList.newInstance();
+  protected List<TestSuiteInfo> testSuiteInfos = FastList.newInstance();
 
-  protected List<KeystoreInfo>              keystoreInfos        = FastList.newInstance();
+  protected List<KeystoreInfo> keystoreInfos = FastList.newInstance();
 
-  protected List<WebappInfo>                webappInfos          = FastList.newInstance();
+  protected List<WebappInfo> webappInfos = FastList.newInstance();
 
   protected ComponentConfig() {
   }
@@ -363,16 +372,19 @@ public class ComponentConfig {
 
     File rootLocationDir = new File(rootLocation);
     if (!rootLocationDir.exists()) {
-      throw new ComponentException("The given component root location is does not exist: " + rootLocation);
+      throw new ComponentException("The given component root location is does not exist: "
+          + rootLocation);
     }
     if (!rootLocationDir.isDirectory()) {
-      throw new ComponentException("The given component root location is not a directory: " + rootLocation);
+      throw new ComponentException("The given component root location is not a directory: "
+          + rootLocation);
     }
 
     String xmlFilename = rootLocation + "/" + OFBIZ_COMPONENT_XML_FILENAME;
     URL xmlUrl = UtilURL.fromFilename(xmlFilename);
     if (xmlUrl == null) {
-      throw new ComponentException("Could not find the " + OFBIZ_COMPONENT_XML_FILENAME + " configuration file in the component root location: " + rootLocation);
+      throw new ComponentException("Could not find the " + OFBIZ_COMPONENT_XML_FILENAME
+          + " configuration file in the component root location: " + rootLocation);
     }
 
     Document ofbizComponentDocument = null;
@@ -456,7 +468,8 @@ public class ComponentConfig {
     try {
       return url.openStream();
     } catch (java.io.IOException e) {
-      throw new ComponentException("Error opening resource at location [" + url.toExternalForm() + "]", e);
+      throw new ComponentException("Error opening resource at location [" + url.toExternalForm()
+          + "]", e);
     }
   }
 
@@ -486,14 +499,17 @@ public class ComponentConfig {
       try {
         url = FlexibleLocation.resolveLocation(location);
       } catch (java.net.MalformedURLException e) {
-        throw new ComponentException("Error with malformed URL while trying to load URL resource at location [" + fullLocation + "]", e);
+        throw new ComponentException("Error with malformed URL while trying to load URL resource at location ["
+                                         + fullLocation + "]",
+                                     e);
       }
       if (url == null) {
         throw new ComponentException("URL Resource not found: " + fullLocation);
       }
       return url;
     } else {
-      throw new ComponentException("The resource-loader type is not recognized: " + resourceLoaderInfo.type);
+      throw new ComponentException("The resource-loader type is not recognized: "
+          + resourceLoaderInfo.type);
     }
   }
 
@@ -514,7 +530,8 @@ public class ComponentConfig {
     if (UtilValidate.isNotEmpty(resourceLoaderInfo.prependEnv)) {
       String propValue = System.getProperty(resourceLoaderInfo.prependEnv);
       if (propValue == null) {
-        String errMsg = "The Java environment (-Dxxx=yyy) variable with name " + resourceLoaderInfo.prependEnv + " is not set, cannot load resource.";
+        String errMsg = "The Java environment (-Dxxx=yyy) variable with name "
+            + resourceLoaderInfo.prependEnv + " is not set, cannot load resource.";
         Debug.logError(errMsg, module);
         throw new IllegalArgumentException(errMsg);
       }
@@ -591,9 +608,9 @@ public class ComponentConfig {
   public static class ResourceInfo {
     public ComponentConfig componentConfig;
 
-    public String          loader;
+    public String loader;
 
-    public String          location;
+    public String location;
 
     public ResourceInfo(ComponentConfig componentConfig, Element element) {
       this.componentConfig = componentConfig;
@@ -613,9 +630,9 @@ public class ComponentConfig {
   public static class ClasspathInfo {
     public ComponentConfig componentConfig;
 
-    public String          type;
+    public String type;
 
-    public String          location;
+    public String location;
 
     public ClasspathInfo(ComponentConfig componentConfig, Element element) {
       this.componentConfig = componentConfig;
@@ -652,11 +669,11 @@ public class ComponentConfig {
   }
 
   public static class KeystoreInfo extends ResourceInfo {
-    public String  name;
+    public String name;
 
-    public String  type;
+    public String type;
 
-    public String  password;
+    public String password;
 
     public boolean isCertStore;
 
@@ -705,35 +722,35 @@ public class ComponentConfig {
   }
 
   public static class WebappInfo {
-    public ComponentConfig     componentConfig;
+    public ComponentConfig componentConfig;
 
-    public List<String>        virtualHosts;
+    public List<String> virtualHosts;
 
     public Map<String, String> initParameters;
 
-    public String              name;
+    public String name;
 
-    public String              title;
+    public String title;
 
-    public String              description;
+    public String description;
 
-    public String              menuName;
+    public String menuName;
 
-    public String              server;
+    public String server;
 
-    public String              mountPoint;
+    public String mountPoint;
 
-    public String              location;
+    public String location;
 
-    public String[]            basePermission;
+    public String[] basePermission;
 
-    public String              position;
+    public String position;
 
-    public boolean             appBarDisplay;
+    public boolean appBarDisplay;
 
-    public boolean             sessionCookieAccepted;
+    public boolean sessionCookieAccepted;
 
-    public boolean             privileged;
+    public boolean privileged;
 
     public WebappInfo(ComponentConfig componentConfig, Element element) {
       this.virtualHosts = FastList.newInstance();
@@ -760,7 +777,8 @@ public class ComponentConfig {
       for (int i = 0; i < this.basePermission.length; i++) {
         this.basePermission[i] = this.basePermission[i].trim();
         if (this.basePermission[i].indexOf('_') != -1) {
-          this.basePermission[i] = this.basePermission[i].substring(0, this.basePermission[i].indexOf('_'));
+          this.basePermission[i] = this.basePermission[i].substring(0,
+                                                                    this.basePermission[i].indexOf('_'));
         }
       }
 

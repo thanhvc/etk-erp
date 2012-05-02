@@ -42,7 +42,7 @@ import org.xml.sax.SAXException;
  */
 public class ContainerConfig {
 
-  public static final String            module     = ContainerConfig.class.getName();
+  public static final String module = ContainerConfig.class.getName();
 
   @LockedBy("ContainerConfig.class")
   private static Map<String, Container> containers = new LinkedHashMap<String, Container>();
@@ -83,7 +83,9 @@ public class ContainerConfig {
     return result;
   }
 
-  public static String getPropertyValue(ContainerConfig.Container parentProp, String name, String defaultValue) {
+  public static String getPropertyValue(ContainerConfig.Container parentProp,
+                                        String name,
+                                        String defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -92,7 +94,9 @@ public class ContainerConfig {
     }
   }
 
-  public static int getPropertyValue(ContainerConfig.Container parentProp, String name, int defaultValue) {
+  public static int getPropertyValue(ContainerConfig.Container parentProp,
+                                     String name,
+                                     int defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -107,7 +111,9 @@ public class ContainerConfig {
     }
   }
 
-  public static boolean getPropertyValue(ContainerConfig.Container parentProp, String name, boolean defaultValue) {
+  public static boolean getPropertyValue(ContainerConfig.Container parentProp,
+                                         String name,
+                                         boolean defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -116,7 +122,9 @@ public class ContainerConfig {
     }
   }
 
-  public static String getPropertyValue(ContainerConfig.Container.Property parentProp, String name, String defaultValue) {
+  public static String getPropertyValue(ContainerConfig.Container.Property parentProp,
+                                        String name,
+                                        String defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -125,7 +133,9 @@ public class ContainerConfig {
     }
   }
 
-  public static int getPropertyValue(ContainerConfig.Container.Property parentProp, String name, int defaultValue) {
+  public static int getPropertyValue(ContainerConfig.Container.Property parentProp,
+                                     String name,
+                                     int defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -140,7 +150,9 @@ public class ContainerConfig {
     }
   }
 
-  public static boolean getPropertyValue(ContainerConfig.Container.Property parentProp, String name, boolean defaultValue) {
+  public static boolean getPropertyValue(ContainerConfig.Container.Property parentProp,
+                                         String name,
+                                         boolean defaultValue) {
     ContainerConfig.Container.Property prop = parentProp.getProperty(name);
     if (prop == null || UtilValidate.isEmpty(prop.value)) {
       return defaultValue;
@@ -172,9 +184,9 @@ public class ContainerConfig {
   }
 
   public static class Container {
-    public String                name;
+    public String name;
 
-    public String                className;
+    public String className;
 
     public Map<String, Property> properties;
 
@@ -206,9 +218,9 @@ public class ContainerConfig {
     }
 
     public static class Property {
-      public String                name;
+      public String name;
 
-      public String                value;
+      public String value;
 
       public Map<String, Property> properties;
 

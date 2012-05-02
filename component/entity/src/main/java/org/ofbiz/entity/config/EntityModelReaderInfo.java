@@ -22,10 +22,9 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class EntityModelReaderInfo extends ResourceInfo {
-    public EntityModelReaderInfo(Element element) {
-        super(element);
-    }
+  public EntityModelReaderInfo(Element element) {
+    super(element);
+  }
 }

@@ -27,26 +27,32 @@ import org.ofbiz.entity.GenericEntityException;
 
 /**
  * EntityEcaHandler interface
- *
  */
 public interface EntityEcaHandler<T> {
 
-    public static final String EV_VALIDATE = "validate";
-    public static final String EV_RUN = "run";
-    public static final String EV_RETURN = "return";
-    public static final String EV_CACHE_CLEAR = "cache-clear";
-    public static final String EV_CACHE_CHECK = "cache-check";
-    public static final String EV_CACHE_PUT = "cache-put";
+  public static final String EV_VALIDATE = "validate";
 
-    public static final String OP_CREATE = "create";
-    public static final String OP_STORE = "store";
-    public static final String OP_REMOVE = "remove";
-    public static final String OP_FIND = "find";
+  public static final String EV_RUN = "run";
 
+  public static final String EV_RETURN = "return";
 
-    public void setDelegator(Delegator delegator);
+  public static final String EV_CACHE_CLEAR = "cache-clear";
 
-    public Map<String, List<T>> getEntityEventMap(String entityName);
+  public static final String EV_CACHE_CHECK = "cache-check";
 
-    public void evalRules(String currentOperation, Map<String, List<T>> eventMap, String event, GenericEntity value, boolean isError) throws GenericEntityException;
+  public static final String EV_CACHE_PUT = "cache-put";
+
+  public static final String OP_CREATE = "create";
+
+  public static final String OP_STORE = "store";
+
+  public static final String OP_REMOVE = "remove";
+
+  public static final String OP_FIND = "find";
+
+  public void setDelegator(Delegator delegator);
+
+  public Map<String, List<T>> getEntityEventMap(String entityName);
+
+  public void evalRules(String currentOperation, Map<String, List<T>> eventMap, String event, GenericEntity value, boolean isError) throws GenericEntityException;
 }

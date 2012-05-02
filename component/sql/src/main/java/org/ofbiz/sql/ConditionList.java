@@ -26,45 +26,46 @@ import org.ofbiz.base.util.StringUtil;
 
 @SourceMonitored
 public final class ConditionList extends Condition implements Iterable<Condition> {
-    private final Joiner joiner;
-    private final List<Condition> conditions;
+  private final Joiner joiner;
 
-    public ConditionList(Joiner joiner, List<Condition> conditions) {
-        this.joiner = joiner;
-        this.conditions = conditions;
-    }
+  private final List<Condition> conditions;
 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
+  public ConditionList(Joiner joiner, List<Condition> conditions) {
+    this.joiner = joiner;
+    this.conditions = conditions;
+  }
 
-    public void add(Condition condition) {
-        conditions.add(condition);
-    }
+  @Override
+  public void accept(Visitor visitor) {
+    visitor.visit(this);
+  }
 
-    public Joiner getJoiner() {
-        return joiner;
-    }
+  public void add(Condition condition) {
+    conditions.add(condition);
+  }
 
-    public Iterator<Condition> iterator() {
-        return conditions.iterator();
-    }
+  public Joiner getJoiner() {
+    return joiner;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof ConditionList) {
-            ConditionList other = (ConditionList) o;
-            return joiner.equals(other.joiner) && conditions.equals(other.conditions);
-        } else {
-            return false;
-        }
-    }
+  public Iterator<Condition> iterator() {
+    return conditions.iterator();
+  }
 
-    public StringBuilder appendTo(StringBuilder sb) {
-        sb.append('(');
-        StringUtil.appendTo(sb, conditions, " ", " ", joiner.toString());
-        sb.append(')');
-        return sb;
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof ConditionList) {
+      ConditionList other = (ConditionList) o;
+      return joiner.equals(other.joiner) && conditions.equals(other.conditions);
+    } else {
+      return false;
     }
+  }
+
+  public StringBuilder appendTo(StringBuilder sb) {
+    sb.append('(');
+    StringUtil.appendTo(sb, conditions, " ", " ", joiner.toString());
+    sb.append(')');
+    return sb;
+  }
 }

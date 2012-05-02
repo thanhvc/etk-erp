@@ -27,17 +27,16 @@ import javolution.util.FastList;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public abstract class ResourceInfo extends NamedInfo {
-    public List<Element> resourceElements = FastList.newInstance();
+  public List<Element> resourceElements = FastList.newInstance();
 
-    public ResourceInfo(Element element) {
-        super(element);
-        resourceElements.addAll(UtilXml.childElementList(element, "resource"));
-    }
+  public ResourceInfo(Element element) {
+    super(element);
+    resourceElements.addAll(UtilXml.childElementList(element, "resource"));
+  }
 
-    public ResourceInfo(String name) {
-        super(name);
-    }
+  public ResourceInfo(String name) {
+    super(name);
+  }
 }

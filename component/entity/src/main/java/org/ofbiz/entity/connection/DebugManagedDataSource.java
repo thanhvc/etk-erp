@@ -30,18 +30,19 @@ import java.sql.SQLException;
 
 public class DebugManagedDataSource extends ManagedDataSource {
 
-    public static final String module = DebugManagedDataSource.class.getName();
+  public static final String module = DebugManagedDataSource.class.getName();
 
-    public DebugManagedDataSource() {
-        super();
-    }
-    public DebugManagedDataSource(ObjectPool pool, TransactionRegistry transactionRegistry) {
-        super(pool, transactionRegistry);
-    }
+  public DebugManagedDataSource() {
+    super();
+  }
 
-    @Override
-    public Connection getConnection() throws SQLException {
-        Debug.logInfo("Borrowing a connection from the pool; used/total: " + super._pool.getNumActive() + "/" + (super._pool.getNumActive() + super._pool.getNumIdle()), module);
-        return super.getConnection();
-    }
+  public DebugManagedDataSource(ObjectPool pool, TransactionRegistry transactionRegistry) {
+    super(pool, transactionRegistry);
+  }
+
+  @Override
+  public Connection getConnection() throws SQLException {
+    Debug.logInfo("Borrowing a connection from the pool; used/total: " + super._pool.getNumActive() + "/" + (super._pool.getNumActive() + super._pool.getNumIdle()), module);
+    return super.getConnection();
+  }
 }

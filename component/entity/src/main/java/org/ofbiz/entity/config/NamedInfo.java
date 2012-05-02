@@ -22,16 +22,15 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public abstract class NamedInfo {
-    public String name;
+  public String name;
 
-    protected NamedInfo(String name) {
-        this.name = name;
-    }
+  protected NamedInfo(String name) {
+    this.name = name;
+  }
 
-    protected NamedInfo(Element element) {
-        this(element.getAttribute("name"));
-    }
+  protected NamedInfo(Element element) {
+    this(element.getAttribute("name"));
+  }
 }

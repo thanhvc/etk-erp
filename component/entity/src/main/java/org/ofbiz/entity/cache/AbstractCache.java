@@ -24,58 +24,55 @@ import org.ofbiz.entity.DelegatorFactory;
 
 public abstract class AbstractCache<K, V> {
 
-    protected String delegatorName, id;
+  protected String delegatorName, id;
 
-    protected AbstractCache(String delegatorName, String id) {
-        this.delegatorName = delegatorName;
-        this.id = id;
-    }
+  protected AbstractCache(String delegatorName, String id) {
+    this.delegatorName = delegatorName;
+    this.id = id;
+  }
 
-    public Delegator getDelegator() {
-        return DelegatorFactory.getDelegator(this.delegatorName);
-    }
+  public Delegator getDelegator() {
+    return DelegatorFactory.getDelegator(this.delegatorName);
+  }
 
-    public void remove(String entityName) {
-        UtilCache.clearCache(getCacheName(entityName));
-    }
+  public void remove(String entityName) {
+    UtilCache.clearCache(getCacheName(entityName));
+  }
 
-    public void clear() {
-        UtilCache.clearCachesThatStartWith(getCacheNamePrefix());
-    }
+  public void clear() {
+    UtilCache.clearCachesThatStartWith(getCacheNamePrefix());
+  }
 
-    public String getCacheNamePrefix() {
-        return "entitycache." + id + "." + delegatorName + ".";
-    }
+  public String getCacheNamePrefix() {
+    return "entitycache." + id + "." + delegatorName + ".";
+  }
 
-    public String[] getCacheNamePrefixes() {
-        return new String[] {
-            "entitycache." + id + ".${delegator-name}.",
-            "entitycache." + id + "." + delegatorName + "."
-        };
-    }
+  public String[] getCacheNamePrefixes() {
+    return new String[] { "entitycache." + id + ".${delegator-name}.", "entitycache." + id + "." + delegatorName + "." };
+  }
 
-    public String getCacheName(String entityName) {
-        return getCacheNamePrefix() + entityName;
-    }
+  public String getCacheName(String entityName) {
+    return getCacheNamePrefix() + entityName;
+  }
 
-    public String[] getCacheNames(String entityName) {
-        String[] prefixes = getCacheNamePrefixes();
-        String[] names = new String[prefixes.length * 2];
-        for (int i = 0; i < prefixes.length; i++) {
-            names[i] = prefixes[i] + "${entity-name}";
-        }
-        for (int i = prefixes.length, j = 0; j < prefixes.length; i++, j++) {
-            names[i] = prefixes[j] + entityName;
-        }
-        return names;
+  public String[] getCacheNames(String entityName) {
+    String[] prefixes = getCacheNamePrefixes();
+    String[] names = new String[prefixes.length * 2];
+    for (int i = 0; i < prefixes.length; i++) {
+      names[i] = prefixes[i] + "${entity-name}";
     }
+    for (int i = prefixes.length, j = 0; j < prefixes.length; i++, j++) {
+      names[i] = prefixes[j] + entityName;
+    }
+    return names;
+  }
 
-    protected UtilCache<K, V> getCache(String entityName) {
-        return UtilCache.findCache(getCacheName(entityName));
-    }
+  protected UtilCache<K, V> getCache(String entityName) {
+    return UtilCache.findCache(getCacheName(entityName));
+  }
 
-    protected UtilCache<K, V> getOrCreateCache(String entityName) {
-        String name = getCacheName(entityName);
-        return UtilCache.getOrCreateUtilCache(name, 0, 0, 0, true, false, getCacheNames(entityName));
-    }
+  protected UtilCache<K, V> getOrCreateCache(String entityName) {
+    String name = getCacheName(entityName);
+    return UtilCache.getOrCreateUtilCache(name, 0, 0, 0, true, false, getCacheNames(entityName));
+  }
 }

@@ -21,71 +21,72 @@ package org.ofbiz.entity.datasource;
 
 import org.ofbiz.base.util.UtilValidate;
 
-
-
-
 /**
  * Generic Entity Helper Info Class
- *
  */
 public class GenericHelperInfo {
-    protected String entityGroupName;
-    protected String helperBaseName;
-    protected String tenantId = null;
-    protected String overrideJdbcUri = null;
-    protected String overrideUsername = null;
-    protected String overridePassword = null;
-    
-    public GenericHelperInfo(String entityGroupName, String helperBaseName) {
-        this.entityGroupName = entityGroupName;
-        this.helperBaseName = helperBaseName;
-    }
+  protected String entityGroupName;
 
-    public String getHelperFullName() {
-        if (UtilValidate.isNotEmpty(tenantId)) {
-            return helperBaseName + "#" + tenantId;
-        } else {
-            return helperBaseName;
-        }
-    }
+  protected String helperBaseName;
 
-    public String getEntityGroupName() {
-        return entityGroupName;
-    }
+  protected String tenantId = null;
 
-    public String getHelperBaseName() {
-        return helperBaseName;
-    }
+  protected String overrideJdbcUri = null;
 
-    public String getTenantId() {
-        return tenantId;
-    }
+  protected String overrideUsername = null;
 
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
+  protected String overridePassword = null;
 
-    public String getOverrideJdbcUri() {
-        return overrideJdbcUri;
-    }
+  public GenericHelperInfo(String entityGroupName, String helperBaseName) {
+    this.entityGroupName = entityGroupName;
+    this.helperBaseName = helperBaseName;
+  }
 
-    public void setOverrideJdbcUri(String overrideJdbcUri) {
-        this.overrideJdbcUri = overrideJdbcUri;
+  public String getHelperFullName() {
+    if (UtilValidate.isNotEmpty(tenantId)) {
+      return helperBaseName + "#" + tenantId;
+    } else {
+      return helperBaseName;
     }
+  }
 
-    public String getOverrideUsername() {
-        return overrideUsername;
-    }
+  public String getEntityGroupName() {
+    return entityGroupName;
+  }
 
-    public void setOverrideUsername(String overrideUsername) {
-        this.overrideUsername = overrideUsername;
-    }
+  public String getHelperBaseName() {
+    return helperBaseName;
+  }
 
-    public String getOverridePassword() {
-        return overridePassword;
-    }
+  public String getTenantId() {
+    return tenantId;
+  }
 
-    public void setOverridePassword(String overridePassword) {
-        this.overridePassword = overridePassword;
-    }
+  public void setTenantId(String tenantId) {
+    this.tenantId = tenantId;
+  }
+
+  public String getOverrideJdbcUri() {
+    return overrideJdbcUri;
+  }
+
+  public void setOverrideJdbcUri(String overrideJdbcUri) {
+    this.overrideJdbcUri = overrideJdbcUri;
+  }
+
+  public String getOverrideUsername() {
+    return overrideUsername;
+  }
+
+  public void setOverrideUsername(String overrideUsername) {
+    this.overrideUsername = overrideUsername;
+  }
+
+  public String getOverridePassword() {
+    return overridePassword;
+  }
+
+  public void setOverridePassword(String overridePassword) {
+    this.overridePassword = overridePassword;
+  }
 }

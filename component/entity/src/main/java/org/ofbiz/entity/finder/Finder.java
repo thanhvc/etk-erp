@@ -28,25 +28,26 @@ import org.ofbiz.entity.Delegator;
 
 @SuppressWarnings("serial")
 public abstract class Finder implements Serializable {
-    protected FlexibleStringExpander entityNameExdr;
-    protected FlexibleStringExpander useCacheStrExdr;
+  protected FlexibleStringExpander entityNameExdr;
 
-    protected Finder(Element element) {
-        this.entityNameExdr = FlexibleStringExpander.getInstance(element.getAttribute("entity-name"));
-        this.useCacheStrExdr = FlexibleStringExpander.getInstance(element.getAttribute("use-cache"));
-    }
+  protected FlexibleStringExpander useCacheStrExdr;
 
-    public String getEntityName() {
-        String entName = this.entityNameExdr.getOriginal();
-        // if there is expansion syntax
-        if (entName.indexOf("${") >= 0) return null;
-        return entName;
-    }
+  protected Finder(Element element) {
+    this.entityNameExdr = FlexibleStringExpander.getInstance(element.getAttribute("entity-name"));
+    this.useCacheStrExdr = FlexibleStringExpander.getInstance(element.getAttribute("use-cache"));
+  }
 
-    public void setEntityName(String entityName) {
-        this.entityNameExdr = FlexibleStringExpander.getInstance(entityName);
-    }
+  public String getEntityName() {
+    String entName = this.entityNameExdr.getOriginal();
+    // if there is expansion syntax
+    if (entName.indexOf("${") >= 0)
+      return null;
+    return entName;
+  }
 
-    public abstract void runFind(Map<String, Object> context, Delegator delegator) throws GeneralException;
+  public void setEntityName(String entityName) {
+    this.entityNameExdr = FlexibleStringExpander.getInstance(entityName);
+  }
+
+  public abstract void runFind(Map<String, Object> context, Delegator delegator) throws GeneralException;
 }
-

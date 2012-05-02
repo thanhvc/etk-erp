@@ -30,6 +30,7 @@ import org.ofbiz.entity.datasource.GenericHelperInfo;
  */
 public interface ConnectionFactoryInterface {
 
-    public Connection getConnection(GenericHelperInfo helperInfo, Element configElement) throws SQLException, GenericEntityException;
-    public void closeAll();
+  public Connection getConnection(GenericHelperInfo helperInfo, Element configElement) throws SQLException, GenericEntityException;
+
+  public void closeAll();
 }

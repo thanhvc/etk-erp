@@ -35,147 +35,151 @@ import org.ofbiz.entity.model.ModelEntity;
 
 /**
  * Join operator (AND/OR).
- *
  */
 @SuppressWarnings("serial")
 public class EntityJoinOperator extends EntityOperator<EntityCondition, EntityCondition, Boolean> {
 
-    protected boolean shortCircuitValue;
+  protected boolean shortCircuitValue;
 
-    protected EntityJoinOperator(int id, String code, boolean shortCircuitValue) {
-        super(id, code);
-        this.shortCircuitValue = shortCircuitValue;
-    }
+  protected EntityJoinOperator(int id, String code, boolean shortCircuitValue) {
+    super(id, code);
+    this.shortCircuitValue = shortCircuitValue;
+  }
 
-    @Override
-    public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, boolean compat, EntityCondition lhs, EntityCondition rhs, DatasourceInfo datasourceInfo) {
-        List<EntityCondition> conditions = FastList.newInstance();
-        conditions.add(lhs);
-        conditions.add(rhs);
-        addSqlValue(sql, modelEntity, entityConditionParams, conditions, datasourceInfo);
-    }
+  @Override
+  public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, boolean compat, EntityCondition lhs, EntityCondition rhs, DatasourceInfo datasourceInfo) {
+    List<EntityCondition> conditions = FastList.newInstance();
+    conditions.add(lhs);
+    conditions.add(rhs);
+    addSqlValue(sql, modelEntity, entityConditionParams, conditions, datasourceInfo);
+  }
 
-    public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, List<? extends EntityCondition> conditionList, DatasourceInfo datasourceInfo) {
-        if (UtilValidate.isNotEmpty(conditionList)) {
-            boolean hadSomething = false;
-            Iterator<? extends EntityCondition> conditionIter = conditionList.iterator();
-            while (conditionIter.hasNext()) {
-                EntityCondition condition = conditionIter.next();
-                if (condition.isEmpty()) {
-                    continue;
-                }
-                if (hadSomething) {
-                    sql.append(' ');
-                    sql.append(getCode());
-                    sql.append(' ');
-                } else {
-                    hadSomething = true;
-                    sql.append('(');
-                }
-                sql.append(condition.makeWhereString(modelEntity, entityConditionParams, datasourceInfo));
-            }
-            if (hadSomething) {
-                sql.append(')');
-            }
+  public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, List<? extends EntityCondition> conditionList, DatasourceInfo datasourceInfo) {
+    if (UtilValidate.isNotEmpty(conditionList)) {
+      boolean hadSomething = false;
+      Iterator<? extends EntityCondition> conditionIter = conditionList.iterator();
+      while (conditionIter.hasNext()) {
+        EntityCondition condition = conditionIter.next();
+        if (condition.isEmpty()) {
+          continue;
         }
-    }
-
-    protected EntityCondition freeze(Object item) {
-        return ((EntityCondition) item).freeze();
-    }
-
-    @Override
-    public EntityCondition freeze(EntityCondition lhs, EntityCondition rhs) {
-        return EntityCondition.makeCondition(freeze(lhs), this, freeze(rhs));
-    }
-
-    public EntityCondition freeze(List<? extends EntityCondition> conditionList) {
-        List<EntityCondition> newList = new ArrayList<EntityCondition>(conditionList.size());
-        for (EntityCondition condition: conditionList) {
-            newList.add(condition.freeze());
+        if (hadSomething) {
+          sql.append(' ');
+          sql.append(getCode());
+          sql.append(' ');
+        } else {
+          hadSomething = true;
+          sql.append('(');
         }
-        return EntityCondition.makeCondition(newList, this);
+        sql.append(condition.makeWhereString(modelEntity, entityConditionParams, datasourceInfo));
+      }
+      if (hadSomething) {
+        sql.append(')');
+      }
     }
+  }
 
-    public void visit(EntityConditionVisitor visitor, List<? extends EntityCondition> conditionList) {
-        if (UtilValidate.isNotEmpty(conditionList)) {
-            for (EntityCondition condition: conditionList) {
-                visitor.visit(condition);
-            }
-        }
-    }
+  protected EntityCondition freeze(Object item) {
+    return ((EntityCondition) item).freeze();
+  }
 
-    @Override
-    public void visit(EntityConditionVisitor visitor, EntityCondition lhs, EntityCondition rhs) {
-        lhs.visit(visitor);
-        visitor.visit(rhs);
-    }
+  @Override
+  public EntityCondition freeze(EntityCondition lhs, EntityCondition rhs) {
+    return EntityCondition.makeCondition(freeze(lhs), this, freeze(rhs));
+  }
 
-    public Boolean eval(GenericEntity entity, EntityCondition lhs, EntityCondition rhs) {
-        return entityMatches(entity, lhs, rhs) ? Boolean.TRUE : Boolean.FALSE;
+  public EntityCondition freeze(List<? extends EntityCondition> conditionList) {
+    List<EntityCondition> newList = new ArrayList<EntityCondition>(conditionList.size());
+    for (EntityCondition condition : conditionList) {
+      newList.add(condition.freeze());
     }
+    return EntityCondition.makeCondition(newList, this);
+  }
 
-    @Override
-    public boolean isEmpty(EntityCondition lhs, EntityCondition rhs) {
-        return lhs.isEmpty() && rhs.isEmpty();
+  public void visit(EntityConditionVisitor visitor, List<? extends EntityCondition> conditionList) {
+    if (UtilValidate.isNotEmpty(conditionList)) {
+      for (EntityCondition condition : conditionList) {
+        visitor.visit(condition);
+      }
     }
+  }
 
-    public boolean isEmpty(List<? extends EntityCondition> conditionList) {
-        for (EntityCondition condition: conditionList) {
-            if (!condition.isEmpty()) {
-                return false;
-            }
-        }
-        return true;
-    }
+  @Override
+  public void visit(EntityConditionVisitor visitor, EntityCondition lhs, EntityCondition rhs) {
+    lhs.visit(visitor);
+    visitor.visit(rhs);
+  }
 
-    @Override
-    public boolean entityMatches(GenericEntity entity, EntityCondition lhs, EntityCondition rhs) {
-        if (lhs.entityMatches(entity) == shortCircuitValue) return shortCircuitValue;
-        if (rhs.entityMatches(entity) == shortCircuitValue) return shortCircuitValue;
-        return !shortCircuitValue;
-    }
+  public Boolean eval(GenericEntity entity, EntityCondition lhs, EntityCondition rhs) {
+    return entityMatches(entity, lhs, rhs) ? Boolean.TRUE : Boolean.FALSE;
+  }
 
-    public boolean entityMatches(GenericEntity entity, List<? extends EntityCondition> conditionList) {
-        return mapMatches(entity.getDelegator(), entity, conditionList);
-    }
+  @Override
+  public boolean isEmpty(EntityCondition lhs, EntityCondition rhs) {
+    return lhs.isEmpty() && rhs.isEmpty();
+  }
 
-    public Boolean eval(Delegator delegator, Map<String, ? extends Object> map, EntityCondition lhs, EntityCondition rhs) {
-        return castBoolean(mapMatches(delegator, map, lhs, rhs));
+  public boolean isEmpty(List<? extends EntityCondition> conditionList) {
+    for (EntityCondition condition : conditionList) {
+      if (!condition.isEmpty()) {
+        return false;
+      }
     }
+    return true;
+  }
 
-    @Override
-    public boolean mapMatches(Delegator delegator, Map<String, ? extends Object> map, EntityCondition lhs, EntityCondition rhs) {
-        if (lhs.mapMatches(delegator, map) == shortCircuitValue) return shortCircuitValue;
-        if (rhs.mapMatches(delegator, map) == shortCircuitValue) return shortCircuitValue;
-        return !shortCircuitValue;
-    }
+  @Override
+  public boolean entityMatches(GenericEntity entity, EntityCondition lhs, EntityCondition rhs) {
+    if (lhs.entityMatches(entity) == shortCircuitValue)
+      return shortCircuitValue;
+    if (rhs.entityMatches(entity) == shortCircuitValue)
+      return shortCircuitValue;
+    return !shortCircuitValue;
+  }
 
-    public Boolean eval(Delegator delegator, Map<String, ? extends Object> map, List<? extends EntityCondition> conditionList) {
-        return castBoolean(mapMatches(delegator, map, conditionList));
-    }
+  public boolean entityMatches(GenericEntity entity, List<? extends EntityCondition> conditionList) {
+    return mapMatches(entity.getDelegator(), entity, conditionList);
+  }
 
-    public boolean mapMatches(Delegator delegator, Map<String, ? extends Object> map, List<? extends EntityCondition> conditionList) {
-        if (UtilValidate.isNotEmpty(conditionList)) {
-            for (EntityCondition condition: conditionList) {
-                if (condition.mapMatches(delegator, map) == shortCircuitValue) return shortCircuitValue;
-            }
-        }
-        return !shortCircuitValue;
-    }
+  public Boolean eval(Delegator delegator, Map<String, ? extends Object> map, EntityCondition lhs, EntityCondition rhs) {
+    return castBoolean(mapMatches(delegator, map, lhs, rhs));
+  }
 
-    @Override
-    public void validateSql(ModelEntity modelEntity, EntityCondition lhs, EntityCondition rhs) throws GenericModelException {
-        lhs.checkCondition(modelEntity);
-        rhs.checkCondition(modelEntity);
-    }
+  @Override
+  public boolean mapMatches(Delegator delegator, Map<String, ? extends Object> map, EntityCondition lhs, EntityCondition rhs) {
+    if (lhs.mapMatches(delegator, map) == shortCircuitValue)
+      return shortCircuitValue;
+    if (rhs.mapMatches(delegator, map) == shortCircuitValue)
+      return shortCircuitValue;
+    return !shortCircuitValue;
+  }
 
-    public void validateSql(ModelEntity modelEntity, List<? extends EntityCondition> conditionList) throws GenericModelException {
-        if (conditionList == null) {
-            throw new GenericModelException("Condition list is null");
-        }
-        for (EntityCondition condition: conditionList) {
-            condition.checkCondition(modelEntity);
-        }
+  public Boolean eval(Delegator delegator, Map<String, ? extends Object> map, List<? extends EntityCondition> conditionList) {
+    return castBoolean(mapMatches(delegator, map, conditionList));
+  }
+
+  public boolean mapMatches(Delegator delegator, Map<String, ? extends Object> map, List<? extends EntityCondition> conditionList) {
+    if (UtilValidate.isNotEmpty(conditionList)) {
+      for (EntityCondition condition : conditionList) {
+        if (condition.mapMatches(delegator, map) == shortCircuitValue)
+          return shortCircuitValue;
+      }
     }
+    return !shortCircuitValue;
+  }
+
+  @Override
+  public void validateSql(ModelEntity modelEntity, EntityCondition lhs, EntityCondition rhs) throws GenericModelException {
+    lhs.checkCondition(modelEntity);
+    rhs.checkCondition(modelEntity);
+  }
+
+  public void validateSql(ModelEntity modelEntity, List<? extends EntityCondition> conditionList) throws GenericModelException {
+    if (conditionList == null) {
+      throw new GenericModelException("Condition list is null");
+    }
+    for (EntityCondition condition : conditionList) {
+      condition.checkCondition(modelEntity);
+    }
+  }
 }

@@ -68,6 +68,8 @@ public class ComponentContainer implements Container {
     this.configFileLocation = configFile;
 
     // get the config for this container
+    //component/base/config/etk-containers.xml
+    //<container name="component-container" class="org.ofbiz.base.container.ComponentContainer"/>
     ContainerConfig.Container cc = ContainerConfig.getContainer("component-container", configFileLocation);
 
     // check for an override loader config
@@ -124,6 +126,7 @@ public class ComponentContainer implements Container {
     }
 
     // get the components to load
+    // read all of 'component-load.xml' for each component
     List<ComponentLoaderConfig.ComponentDef> components = ComponentLoaderConfig.getRootComponents(loaderConfig);
 
     String parentPath;
@@ -147,7 +150,6 @@ public class ComponentContainer implements Container {
       System.setProperty("java.class.path", classPath.toString());
       System.setProperty("java.library.path", libraryPath.toString());
       ClassLoader cl = classPath.getClassLoader();
-      System.out.println("ThanhVC :: " + classPath.toString());
       Thread.currentThread().setContextClassLoader(cl);
     }
 

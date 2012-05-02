@@ -20,20 +20,19 @@ package org.ofbiz.entity;
 
 /**
  * GenericRemoveException
- *
  */
 @SuppressWarnings("serial")
 public class GenericRemoveException extends GenericEntityException {
 
-    public GenericRemoveException() {
-        super();
-    }
+  public GenericRemoveException() {
+    super();
+  }
 
-    public GenericRemoveException(String str) {
-        super(str);
-    }
+  public GenericRemoveException(String str) {
+    super(str);
+  }
 
-    public GenericRemoveException(String str, Throwable nested) {
-        super(str, nested);
-    }
+  public GenericRemoveException(String str, Throwable nested) {
+    super(str, nested);
+  }
 }

@@ -22,17 +22,18 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class ResourceLoaderInfo extends NamedInfo {
-    public String className;
-    public String prependEnv;
-    public String prefix;
+  public String className;
 
-    public ResourceLoaderInfo(Element element) {
-        super(element);
-        this.className = element.getAttribute("class");
-        this.prependEnv = element.getAttribute("prepend-env");
-        this.prefix = element.getAttribute("prefix");
-    }
+  public String prependEnv;
+
+  public String prefix;
+
+  public ResourceLoaderInfo(Element element) {
+    super(element);
+    this.className = element.getAttribute("class");
+    this.prependEnv = element.getAttribute("prepend-env");
+    this.prefix = element.getAttribute("prefix");
+  }
 }

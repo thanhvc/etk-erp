@@ -31,48 +31,45 @@ import org.ofbiz.entity.model.ModelField;
 
 /**
  * Base class for condition expression values.
- *
  */
 @SuppressWarnings("serial")
 public abstract class EntityConditionValue extends EntityConditionBase {
 
-    public abstract ModelField getModelField(ModelEntity modelEntity);
+  public abstract ModelField getModelField(ModelEntity modelEntity);
 
-    public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, boolean includeTableNamePrefix,
-            DatasourceInfo datasourceinfo) {
-        addSqlValue(sql, emptyAliases, modelEntity, entityConditionParams, includeTableNamePrefix, datasourceinfo);
+  public void addSqlValue(StringBuilder sql, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, boolean includeTableNamePrefix, DatasourceInfo datasourceinfo) {
+    addSqlValue(sql, emptyAliases, modelEntity, entityConditionParams, includeTableNamePrefix, datasourceinfo);
+  }
+
+  public abstract void addSqlValue(StringBuilder sql, Map<String, String> tableAliases, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams, boolean includeTableNamePrefix, DatasourceInfo datasourceinfo);
+
+  public abstract void validateSql(ModelEntity modelEntity) throws GenericModelException;
+
+  public Object getValue(GenericEntity entity) {
+    if (entity == null) {
+      return null;
     }
+    return getValue(entity.getDelegator(), entity);
+  }
 
-    public abstract void addSqlValue(StringBuilder sql, Map<String, String> tableAliases, ModelEntity modelEntity, List<EntityConditionParam> entityConditionParams,
-            boolean includeTableNamePrefix, DatasourceInfo datasourceinfo);
+  public abstract Object getValue(Delegator delegator, Map<String, ? extends Object> map);
 
-    public abstract void validateSql(ModelEntity modelEntity) throws GenericModelException;
+  public abstract EntityConditionValue freeze();
 
-    public Object getValue(GenericEntity entity) {
-        if (entity == null) {
-            return null;
-        }
-        return getValue(entity.getDelegator(), entity);
-    }
+  public abstract void visit(EntityConditionVisitor visitor);
 
-    public abstract Object getValue(Delegator delegator, Map<String, ? extends Object> map);
+  public void accept(EntityConditionVisitor visitor) {
+    throw new IllegalArgumentException("accept not implemented");
+  }
 
-    public abstract EntityConditionValue freeze();
+  public void toString(StringBuilder sb) {
+    addSqlValue(sb, null, new ArrayList<EntityConditionParam>(), false, null);
+  }
 
-    public abstract void visit(EntityConditionVisitor visitor);
-
-    public void accept(EntityConditionVisitor visitor) {
-        throw new IllegalArgumentException("accept not implemented");
-    }
-
-    public void toString(StringBuilder sb) {
-        addSqlValue(sb, null, new ArrayList<EntityConditionParam>(), false, null);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sql = new StringBuilder();
-        toString(sql);
-        return sql.toString();
-    }
+  @Override
+  public String toString() {
+    StringBuilder sql = new StringBuilder();
+    toString(sql);
+    return sql.toString();
+  }
 }

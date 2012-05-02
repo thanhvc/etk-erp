@@ -44,7 +44,7 @@ import org.ofbiz.base.util.UtilValidate;
  */
 public class ContainerLoader implements StartupLoader {
 
-  public static final String            module       = ContainerLoader.class.getName();
+  public static final String module = ContainerLoader.class.getName();
 
   private static Map<String, Container> containerMap = new ConcurrentHashMap<String, Container>();
 
@@ -63,13 +63,13 @@ public class ContainerLoader implements StartupLoader {
     return containerMap.get(containerName);
   }
 
-  private String                configFile       = null;
+  private String configFile = null;
 
   private final List<Container> loadedContainers = new LinkedList<Container>();
 
-  private boolean               unloading        = false;
+  private boolean unloading = false;
 
-  private boolean               loaded           = false;
+  private boolean loaded = false;
 
   /**
    * @see org.ofbiz.base.start.StartupLoader#load(Config, String[])
@@ -80,7 +80,8 @@ public class ContainerLoader implements StartupLoader {
     }
     Debug.logInfo("[Startup] Loading containers...", module);
     this.loadedContainers.clear();
-    // get this loader's configuration file
+    // get this loader's configuration file 
+    // ThanhVC: Read file: 'component/base/config/etk-containers.xml' from 'start.properties'
     this.configFile = config.containerConfig;
     Collection<ContainerConfig.Container> containers = null;
     try {
@@ -108,7 +109,8 @@ public class ContainerLoader implements StartupLoader {
       if (containerCfg.name.equals("rmi-dispatcher") && configFile.equals("limited-containers.xml")) {
         try {
           ContainerConfig.Container.Property initialCtxProp = containerCfg.getProperty("use-initial-context");
-          String useCtx = initialCtxProp == null || initialCtxProp.value == null ? "false" : initialCtxProp.value;
+          String useCtx = initialCtxProp == null || initialCtxProp.value == null ? "false"
+                                                                                : initialCtxProp.value;
           if (!useCtx.equalsIgnoreCase("true")) {
             // system.setProperty("java.security.policy", "client.policy");
             // maybe used if needed...
@@ -213,7 +215,9 @@ public class ContainerLoader implements StartupLoader {
     for (Thread t : threadArr) {
       if (t != null) {
         ThreadGroup g = t.getThreadGroup();
-        out.println("Thread: " + t.getName() + " [" + t.getId() + "] @ " + (g != null ? g.getName() : "[none]") + " : " + t.getPriority() + " [" + t.getState().name() + "]");
+        out.println("Thread: " + t.getName() + " [" + t.getId() + "] @ "
+            + (g != null ? g.getName() : "[none]") + " : " + t.getPriority() + " ["
+            + t.getState().name() + "]");
         out.println("--- Alive: " + t.isAlive() + " Daemon: " + t.isDaemon());
         for (StackTraceElement stack : t.getStackTrace()) {
           out.println("### " + stack.toString());

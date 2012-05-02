@@ -27,47 +27,59 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class DelegatorInfo extends NamedInfo {
 
-    public String entityModelReader;
-    public String entityGroupReader;
-    public String entityEcaReader;
-    public boolean useEntityEca;
-    public String entityEcaHandlerClassName;
-    public boolean useDistributedCacheClear;
-    public String distributedCacheClearClassName;
-    public String distributedCacheClearUserLoginId;
-    public String sequencedIdPrefix;
-    public String defaultGroupName;
-    public Map<String, String> groupMap = new HashMap<String, String>();
+  public String entityModelReader;
 
-    public DelegatorInfo(Element element) {
-        super(element);
-        this.entityModelReader = element.getAttribute("entity-model-reader");
-        this.entityGroupReader = element.getAttribute("entity-group-reader");
-        this.entityEcaReader = element.getAttribute("entity-eca-reader");
+  public String entityGroupReader;
 
-        // this defaults to true, ie anything but false is true
-        this.useEntityEca = !"false".equalsIgnoreCase(element.getAttribute("entity-eca-enabled"));
-        this.entityEcaHandlerClassName = element.getAttribute("entity-eca-handler-class-name");
+  public String entityEcaReader;
 
-        // this defaults to false, ie anything but true is false
-        this.useDistributedCacheClear = "true".equalsIgnoreCase(element.getAttribute("distributed-cache-clear-enabled"));
-        this.distributedCacheClearClassName = element.getAttribute("distributed-cache-clear-class-name");
-        if (UtilValidate.isEmpty(this.distributedCacheClearClassName)) this.distributedCacheClearClassName = "org.ofbiz.entityext.cache.EntityCacheServices";
+  public boolean useEntityEca;
 
-        this.distributedCacheClearUserLoginId = element.getAttribute("distributed-cache-clear-user-login-id");
-        if (UtilValidate.isEmpty(this.distributedCacheClearUserLoginId)) this.distributedCacheClearUserLoginId = "system";
+  public String entityEcaHandlerClassName;
 
-        this.sequencedIdPrefix = element.getAttribute("sequenced-id-prefix");
+  public boolean useDistributedCacheClear;
 
-        this.defaultGroupName = element.getAttribute("default-group-name");
-        if (UtilValidate.isEmpty(this.defaultGroupName)) this.defaultGroupName = "org.ofbiz";
+  public String distributedCacheClearClassName;
 
-        for (Element groupMapElement: UtilXml.childElementList(element, "group-map")) {
-            groupMap.put(groupMapElement.getAttribute("group-name"), groupMapElement.getAttribute("datasource-name"));
-        }
+  public String distributedCacheClearUserLoginId;
+
+  public String sequencedIdPrefix;
+
+  public String defaultGroupName;
+
+  public Map<String, String> groupMap = new HashMap<String, String>();
+
+  public DelegatorInfo(Element element) {
+    super(element);
+    this.entityModelReader = element.getAttribute("entity-model-reader");
+    this.entityGroupReader = element.getAttribute("entity-group-reader");
+    this.entityEcaReader = element.getAttribute("entity-eca-reader");
+
+    // this defaults to true, ie anything but false is true
+    this.useEntityEca = !"false".equalsIgnoreCase(element.getAttribute("entity-eca-enabled"));
+    this.entityEcaHandlerClassName = element.getAttribute("entity-eca-handler-class-name");
+
+    // this defaults to false, ie anything but true is false
+    this.useDistributedCacheClear = "true".equalsIgnoreCase(element.getAttribute("distributed-cache-clear-enabled"));
+    this.distributedCacheClearClassName = element.getAttribute("distributed-cache-clear-class-name");
+    if (UtilValidate.isEmpty(this.distributedCacheClearClassName))
+      this.distributedCacheClearClassName = "org.ofbiz.entityext.cache.EntityCacheServices";
+
+    this.distributedCacheClearUserLoginId = element.getAttribute("distributed-cache-clear-user-login-id");
+    if (UtilValidate.isEmpty(this.distributedCacheClearUserLoginId))
+      this.distributedCacheClearUserLoginId = "system";
+
+    this.sequencedIdPrefix = element.getAttribute("sequenced-id-prefix");
+
+    this.defaultGroupName = element.getAttribute("default-group-name");
+    if (UtilValidate.isEmpty(this.defaultGroupName))
+      this.defaultGroupName = "org.ofbiz";
+
+    for (Element groupMapElement : UtilXml.childElementList(element, "group-map")) {
+      groupMap.put(groupMapElement.getAttribute("group-name"), groupMapElement.getAttribute("datasource-name"));
     }
+  }
 }

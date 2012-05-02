@@ -30,30 +30,28 @@ import org.w3c.dom.Element;
 
 /**
  * Uses the delegator to find entity values by a and
- *
  */
 @SuppressWarnings("serial")
 public class ByAndFinder extends ListFinder {
 
-    public static final String module = ByAndFinder.class.getName();
+  public static final String module = ByAndFinder.class.getName();
 
-    protected Map<FlexibleMapAccessor<Object>, Object> fieldMap;
+  protected Map<FlexibleMapAccessor<Object>, Object> fieldMap;
 
-    public ByAndFinder(Element element) {
-        super(element, "and");
+  public ByAndFinder(Element element) {
+    super(element, "and");
 
-        // process field-map
-        this.fieldMap = EntityFinderUtil.makeFieldMap(element);
-    }
+    // process field-map
+    this.fieldMap = EntityFinderUtil.makeFieldMap(element);
+  }
 
-    @Override
-    public EntityCondition getWhereEntityCondition(Map<String, Object> context, ModelEntity modelEntity, ModelFieldTypeReader modelFieldTypeReader) {
-        // create the by and map
-        Map<String, Object> entityContext = FastMap.newInstance();
-        EntityFinderUtil.expandFieldMapToContext(this.fieldMap, context, entityContext);
-        // then convert the types...
-        modelEntity.convertFieldMapInPlace(entityContext, modelFieldTypeReader);
-        return EntityCondition.makeCondition(entityContext);
-    }
+  @Override
+  public EntityCondition getWhereEntityCondition(Map<String, Object> context, ModelEntity modelEntity, ModelFieldTypeReader modelFieldTypeReader) {
+    // create the by and map
+    Map<String, Object> entityContext = FastMap.newInstance();
+    EntityFinderUtil.expandFieldMapToContext(this.fieldMap, context, entityContext);
+    // then convert the types...
+    modelEntity.convertFieldMapInPlace(entityContext, modelFieldTypeReader);
+    return EntityCondition.makeCondition(entityContext);
+  }
 }
-

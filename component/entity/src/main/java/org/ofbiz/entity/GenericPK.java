@@ -26,53 +26,56 @@ import org.ofbiz.entity.model.ModelEntity;
 
 /**
  * Generic Entity Primary Key Object
- *
  */
 @SuppressWarnings("serial")
 public class GenericPK extends GenericEntity {
 
-    protected static final ObjectFactory<GenericPK> genericPKFactory = new ObjectFactory<GenericPK>() {
-        @Override
-        protected GenericPK create() {
-            return new GenericPK();
-        }
-    };
-
-    protected GenericPK() { }
-
-    /** Creates new GenericPK */
-    public static GenericPK create(ModelEntity modelEntity) {
-        GenericPK newPK = genericPKFactory.object();
-        newPK.init(modelEntity);
-        return newPK;
-    }
-
-    /** Creates new GenericPK from existing Map */
-    public static GenericPK create(Delegator delegator, ModelEntity modelEntity, Map<String, ? extends Object> fields) {
-        GenericPK newPK = genericPKFactory.object();
-        newPK.init(delegator, modelEntity, fields);
-        return newPK;
-    }
-
-    /** Creates new GenericPK from existing Map */
-    public static GenericPK create(Delegator delegator, ModelEntity modelEntity, Object singlePkValue) {
-        GenericPK newPK = genericPKFactory.object();
-        newPK.init(delegator, modelEntity, singlePkValue);
-        return newPK;
-    }
-
-    /** Creates new GenericPK from existing GenericPK */
-    public static GenericPK create(GenericPK value) {
-        GenericPK newPK = genericPKFactory.object();
-        newPK.init(value);
-        return newPK;
-    }
-
-    /** Clones this GenericPK, this is a shallow clone & uses the default shallow HashMap clone
-     *@return Object that is a clone of this GenericPK
-     */
+  protected static final ObjectFactory<GenericPK> genericPKFactory = new ObjectFactory<GenericPK>() {
     @Override
-    public Object clone() {
-        return GenericPK.create(this);
+    protected GenericPK create() {
+      return new GenericPK();
     }
+  };
+
+  protected GenericPK() {
+  }
+
+  /** Creates new GenericPK */
+  public static GenericPK create(ModelEntity modelEntity) {
+    GenericPK newPK = genericPKFactory.object();
+    newPK.init(modelEntity);
+    return newPK;
+  }
+
+  /** Creates new GenericPK from existing Map */
+  public static GenericPK create(Delegator delegator, ModelEntity modelEntity, Map<String, ? extends Object> fields) {
+    GenericPK newPK = genericPKFactory.object();
+    newPK.init(delegator, modelEntity, fields);
+    return newPK;
+  }
+
+  /** Creates new GenericPK from existing Map */
+  public static GenericPK create(Delegator delegator, ModelEntity modelEntity, Object singlePkValue) {
+    GenericPK newPK = genericPKFactory.object();
+    newPK.init(delegator, modelEntity, singlePkValue);
+    return newPK;
+  }
+
+  /** Creates new GenericPK from existing GenericPK */
+  public static GenericPK create(GenericPK value) {
+    GenericPK newPK = genericPKFactory.object();
+    newPK.init(value);
+    return newPK;
+  }
+
+  /**
+   * Clones this GenericPK, this is a shallow clone & uses the default shallow
+   * HashMap clone
+   * 
+   * @return Object that is a clone of this GenericPK
+   */
+  @Override
+  public Object clone() {
+    return GenericPK.create(this);
+  }
 }

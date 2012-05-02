@@ -22,13 +22,12 @@ import org.w3c.dom.Element;
 
 /**
  * Misc. utility method for dealing with the entityengine.xml file
- *
  */
 public class FieldTypeInfo extends NamedInfo {
-    public Element resourceElement;
+  public Element resourceElement;
 
-    public FieldTypeInfo(Element element) {
-        super(element);
-        resourceElement = element;
-    }
+  public FieldTypeInfo(Element element) {
+    super(element);
+    resourceElement = element;
+  }
 }

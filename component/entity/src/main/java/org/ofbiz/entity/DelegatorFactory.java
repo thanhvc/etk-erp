@@ -26,34 +26,42 @@ import org.ofbiz.base.util.UtilObject;
 
 /** <code>Delegator</code> factory abstract class. */
 public abstract class DelegatorFactory implements Factory<Delegator, String> {
-    public static final String module = DelegatorFactoryImpl.class.getName();
-    private static final ConcurrentHashMap<String, Delegator> delegatorCache = new ConcurrentHashMap<String, Delegator>();
+  public static final String module = DelegatorFactoryImpl.class.getName();
 
-    public static Delegator getDelegator(String delegatorName) {
-        if (delegatorName == null) {
-            delegatorName = "default";
-            //Debug.logWarning(new Exception("Location where getting delegator with null name"), "Got a getGenericDelegator call with a null delegatorName, assuming default for the name.", module);
-        }
-        do {
-            Delegator delegator = delegatorCache.get(delegatorName);
+  private static final ConcurrentHashMap<String, Delegator> delegatorCache = new ConcurrentHashMap<String, Delegator>();
 
-            if (delegator != null) {
-                // setup the Entity ECA Handler
-                delegator.initEntityEcaHandler();
-                //Debug.logInfo("got delegator(" + delegatorName + ") from cache", module);
-                
-                // setup the distributed CacheClear
-                delegator.initDistributedCacheClear();
-
-                return delegator;
-            }
-            try {
-                delegator = UtilObject.getObjectFromFactory(DelegatorFactory.class, delegatorName);
-            } catch (ClassNotFoundException e) {
-                Debug.logError(e, module);
-            }
-            //Debug.logInfo("putting delegator(" + delegatorName + ") into cache", module);
-            delegatorCache.putIfAbsent(delegatorName, delegator);
-        } while (true);
+  public static Delegator getDelegator(String delegatorName) {
+    if (delegatorName == null) {
+      delegatorName = "default";
+      // Debug.logWarning(new
+      // Exception("Location where getting delegator with null name"),
+      // "Got a getGenericDelegator call with a null delegatorName, assuming default for the name.",
+      // module);
     }
+    do {
+      Delegator delegator = delegatorCache.get(delegatorName);
+
+      if (delegator != null) {
+        // setup the Entity ECA Handler
+        delegator.initEntityEcaHandler();
+        // Debug.logInfo("got delegator(" + delegatorName + ") from cache",
+        // module);
+
+        // setup the distributed CacheClear
+        delegator.initDistributedCacheClear();
+
+        return delegator;
+      }
+      try {
+        // ThanhVC Create GenericDelegator from DelegatorFactory, META-INF/..
+        // via UtilObject.getObjectFromFactory(...) method
+        delegator = UtilObject.getObjectFromFactory(DelegatorFactory.class, delegatorName);
+      } catch (ClassNotFoundException e) {
+        Debug.logError(e, module);
+      }
+      // Debug.logInfo("putting delegator(" + delegatorName + ") into cache",
+      // module);
+      delegatorCache.putIfAbsent(delegatorName, delegator);
+    } while (true);
+  }
 }

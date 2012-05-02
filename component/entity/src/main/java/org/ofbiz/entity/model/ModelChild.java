@@ -22,35 +22,37 @@ import java.io.Serializable;
 
 /**
  * Generic Entity - Entity model class
- *
  */
 @SuppressWarnings("serial")
 public abstract class ModelChild implements Serializable {
 
-    protected ModelEntity parentModelEntity;
-    /** The description for documentation purposes */
-    protected String description = "";
+  protected ModelEntity parentModelEntity;
 
-    protected ModelChild() {}
-    protected ModelChild(ModelEntity parentModelEntity) {
-        setModelEntity(parentModelEntity);
-    }
+  /** The description for documentation purposes */
+  protected String description = "";
 
-    protected void setModelEntity(ModelEntity parentModelEntity) {
-        this.parentModelEntity = parentModelEntity;
-    }
+  protected ModelChild() {
+  }
 
-    public ModelEntity getModelEntity() {
-        return parentModelEntity;
-    }
+  protected ModelChild(ModelEntity parentModelEntity) {
+    setModelEntity(parentModelEntity);
+  }
 
-    /** The description for documentation purposes */
-    public String getDescription() {
-        return this.description;
-    }
+  protected void setModelEntity(ModelEntity parentModelEntity) {
+    this.parentModelEntity = parentModelEntity;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public ModelEntity getModelEntity() {
+    return parentModelEntity;
+  }
+
+  /** The description for documentation purposes */
+  public String getDescription() {
+    return this.description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
 }

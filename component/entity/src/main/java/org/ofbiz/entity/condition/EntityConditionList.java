@@ -23,36 +23,36 @@ import java.util.Iterator;
 import javolution.context.ObjectFactory;
 
 /**
- * Encapsulates a list of EntityConditions to be used as a single EntityCondition combined as specified
- *
+ * Encapsulates a list of EntityConditions to be used as a single
+ * EntityCondition combined as specified
  */
 @SuppressWarnings("serial")
 public class EntityConditionList<T extends EntityCondition> extends EntityConditionListBase<T> {
-    public static final String module = EntityConditionList.class.getName();
+  public static final String module = EntityConditionList.class.getName();
 
-    protected static final ObjectFactory<EntityConditionList<EntityCondition>> entityConditionListFactory = new ObjectFactory<EntityConditionList<EntityCondition>>() {
-        @Override
-        protected EntityConditionList<EntityCondition> create() {
-            return new EntityConditionList<EntityCondition>();
-        }
-    };
-
-    protected EntityConditionList() {
-        super();
-    }
-
+  protected static final ObjectFactory<EntityConditionList<EntityCondition>> entityConditionListFactory = new ObjectFactory<EntityConditionList<EntityCondition>>() {
     @Override
-    public int getConditionListSize() {
-        return super.getConditionListSize();
+    protected EntityConditionList<EntityCondition> create() {
+      return new EntityConditionList<EntityCondition>();
     }
+  };
 
-    @Override
-    public Iterator<T> getConditionIterator() {
-        return super.getConditionIterator();
-    }
+  protected EntityConditionList() {
+    super();
+  }
 
-    @Override
-    public void accept(EntityConditionVisitor visitor) {
-        visitor.acceptEntityConditionList(this);
-    }
+  @Override
+  public int getConditionListSize() {
+    return super.getConditionListSize();
+  }
+
+  @Override
+  public Iterator<T> getConditionIterator() {
+    return super.getConditionIterator();
+  }
+
+  @Override
+  public void accept(EntityConditionVisitor visitor) {
+    visitor.acceptEntityConditionList(this);
+  }
 }

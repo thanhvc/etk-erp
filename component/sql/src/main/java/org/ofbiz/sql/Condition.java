@@ -19,26 +19,29 @@
 package org.ofbiz.sql;
 
 public abstract class Condition extends Atom {
-    public interface Visitor {
-        void visit(BetweenCondition condition);
-        void visit(BooleanCondition condition);
-        void visit(ConditionList condition);
-        void visit(ListCondition condition);
+  public interface Visitor {
+    void visit(BetweenCondition condition);
+
+    void visit(BooleanCondition condition);
+
+    void visit(ConditionList condition);
+
+    void visit(ListCondition condition);
+  }
+
+  public static class BaseVisitor implements Visitor {
+    public void visit(BetweenCondition condition) {
     }
 
-    public static class BaseVisitor implements Visitor {
-        public void visit(BetweenCondition condition) {
-        }
-
-        public void visit(BooleanCondition condition) {
-        }
-
-        public void visit(ConditionList condition) {
-        }
-
-        public void visit(ListCondition condition) {
-        }
+    public void visit(BooleanCondition condition) {
     }
 
-    public abstract void accept(Visitor visitor);
+    public void visit(ConditionList condition) {
+    }
+
+    public void visit(ListCondition condition) {
+    }
+  }
+
+  public abstract void accept(Visitor visitor);
 }

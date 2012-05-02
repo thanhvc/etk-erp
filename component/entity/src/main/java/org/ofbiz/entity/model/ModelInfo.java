@@ -29,126 +29,147 @@ import org.w3c.dom.Element;
 
 /**
  * Generic Entity - Entity model class
- *
  */
 public class ModelInfo {
 
-    public static final String module = ModelInfo.class.getName();
+  public static final String module = ModelInfo.class.getName();
 
-    protected ModelInfo def;
-    /** The title for documentation purposes */
-    protected String title = "";
+  protected ModelInfo def;
 
-    /** The description for documentation purposes */
-    protected String description = "";
+  /** The title for documentation purposes */
+  protected String title = "";
 
-    /** The copyright for documentation purposes */
-    protected String copyright = "";
+  /** The description for documentation purposes */
+  protected String description = "";
 
-    /** The author for documentation purposes */
-    protected String author = "";
+  /** The copyright for documentation purposes */
+  protected String copyright = "";
 
-    /** The version for documentation purposes */
-    protected String version = "";
+  /** The author for documentation purposes */
+  protected String author = "";
 
-    /** The default-resource-name of the Entity, used with the getResource call to check for a value in a resource bundle */
-    protected String defaultResourceName = "";
+  /** The version for documentation purposes */
+  protected String version = "";
 
-    // ===== CONSTRUCTORS =====
+  /**
+   * The default-resource-name of the Entity, used with the getResource call to
+   * check for a value in a resource bundle
+   */
+  protected String defaultResourceName = "";
 
-    public ModelInfo() {
-        this(DEFAULT);
-    }
+  // ===== CONSTRUCTORS =====
 
-    public ModelInfo(ModelInfo def) {
-        this.def = def;
-    }
+  public ModelInfo() {
+    this(DEFAULT);
+  }
 
-    public static final ModelInfo DEFAULT = new ModelInfo() {
-        @Override
-        public String getTitle()                { return "None"; }
-        @Override
-        public String getAuthor()               { return "None"; }
-        @Override
-        public String getCopyright()            { int year = UtilDateTime.getYear(UtilDateTime.nowTimestamp(), TimeZone.getDefault(), Locale.getDefault()); return "Copyright 2001-" + year + " The Apache Software Foundation"; }
-        @Override
-        public String getVersion()              { return "1.0"; }
-        @Override
-        public String getDescription()          { return "None"; }
-        @Override
-        public String getDefaultResourceName()  { return ""; }
-    };
+  public ModelInfo(ModelInfo def) {
+    this.def = def;
+  }
 
-    public void populateFromAttributes(Element element) {
-        author = element.getAttribute("author").intern();
-        copyright = element.getAttribute("copyright").intern();
-        description = StringUtil.internString(UtilXml.childElementValue(element, "description"));
-        title = element.getAttribute("title").intern();
-        version = element.getAttribute("version").intern();
-        defaultResourceName = StringUtil.internString(element.getAttribute("default-resource-name"));
-    }
-
-    public void populateFromElements(Element element) {
-        author = StringUtil.internString(UtilXml.childElementValue(element, "author"));
-        copyright = StringUtil.internString(UtilXml.childElementValue(element, "copyright"));
-        description = StringUtil.internString(UtilXml.childElementValue(element, "description"));
-        title = StringUtil.internString(UtilXml.childElementValue(element, "title"));
-        version = StringUtil.internString(UtilXml.childElementValue(element, "version"));
-        defaultResourceName = StringUtil.internString(UtilXml.childElementValue(element, "default-resource-name"));
-    }
-
-    // Strings to go in the comment header.
-    /** The title for documentation purposes */
+  public static final ModelInfo DEFAULT = new ModelInfo() {
+    @Override
     public String getTitle() {
-        return UtilValidate.isNotEmpty(this.title) ? this.title : def.getTitle();
+      return "None";
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /** The description for documentation purposes */
-    public String getDescription() {
-        return UtilValidate.isNotEmpty(this.description) ? this.description : def.getDescription();
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /** The copyright for documentation purposes */
-    public String getCopyright() {
-        return UtilValidate.isNotEmpty(this.copyright) ? this.copyright : def.getCopyright();
-    }
-
-    public void setCopyright(String copyright) {
-        this.copyright = copyright;
-    }
-
-    /** The author for documentation purposes */
+    @Override
     public String getAuthor() {
-        return UtilValidate.isNotEmpty(this.author) ? this.author : def.getAuthor();
+      return "None";
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    @Override
+    public String getCopyright() {
+      int year = UtilDateTime.getYear(UtilDateTime.nowTimestamp(), TimeZone.getDefault(), Locale.getDefault());
+      return "Copyright 2001-" + year + " The Apache Software Foundation";
     }
 
-    /** The version for documentation purposes */
+    @Override
     public String getVersion() {
-        return UtilValidate.isNotEmpty(this.version) ? this.version : def.getVersion();
+      return "1.0";
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    @Override
+    public String getDescription() {
+      return "None";
     }
 
-    /** The default-resource-name of the Entity */
+    @Override
     public String getDefaultResourceName() {
-        return UtilValidate.isNotEmpty(this.defaultResourceName) ? this.defaultResourceName : def.getDefaultResourceName();
+      return "";
     }
+  };
 
-    public void setDefaultResourceName(String defaultResourceName) {
-        this.defaultResourceName = defaultResourceName;
-    }
+  public void populateFromAttributes(Element element) {
+    author = element.getAttribute("author").intern();
+    copyright = element.getAttribute("copyright").intern();
+    description = StringUtil.internString(UtilXml.childElementValue(element, "description"));
+    title = element.getAttribute("title").intern();
+    version = element.getAttribute("version").intern();
+    defaultResourceName = StringUtil.internString(element.getAttribute("default-resource-name"));
+  }
+
+  public void populateFromElements(Element element) {
+    author = StringUtil.internString(UtilXml.childElementValue(element, "author"));
+    copyright = StringUtil.internString(UtilXml.childElementValue(element, "copyright"));
+    description = StringUtil.internString(UtilXml.childElementValue(element, "description"));
+    title = StringUtil.internString(UtilXml.childElementValue(element, "title"));
+    version = StringUtil.internString(UtilXml.childElementValue(element, "version"));
+    defaultResourceName = StringUtil.internString(UtilXml.childElementValue(element, "default-resource-name"));
+  }
+
+  // Strings to go in the comment header.
+  /** The title for documentation purposes */
+  public String getTitle() {
+    return UtilValidate.isNotEmpty(this.title) ? this.title : def.getTitle();
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  /** The description for documentation purposes */
+  public String getDescription() {
+    return UtilValidate.isNotEmpty(this.description) ? this.description : def.getDescription();
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  /** The copyright for documentation purposes */
+  public String getCopyright() {
+    return UtilValidate.isNotEmpty(this.copyright) ? this.copyright : def.getCopyright();
+  }
+
+  public void setCopyright(String copyright) {
+    this.copyright = copyright;
+  }
+
+  /** The author for documentation purposes */
+  public String getAuthor() {
+    return UtilValidate.isNotEmpty(this.author) ? this.author : def.getAuthor();
+  }
+
+  public void setAuthor(String author) {
+    this.author = author;
+  }
+
+  /** The version for documentation purposes */
+  public String getVersion() {
+    return UtilValidate.isNotEmpty(this.version) ? this.version : def.getVersion();
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+  /** The default-resource-name of the Entity */
+  public String getDefaultResourceName() {
+    return UtilValidate.isNotEmpty(this.defaultResourceName) ? this.defaultResourceName : def.getDefaultResourceName();
+  }
+
+  public void setDefaultResourceName(String defaultResourceName) {
+    this.defaultResourceName = defaultResourceName;
+  }
 }
